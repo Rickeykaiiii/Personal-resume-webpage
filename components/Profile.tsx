@@ -1,14 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { PORTRAIT_URLS, SKILLS, LANGUAGES } from '../constants.ts';
 
 const Profile: React.FC = () => {
+  const [imageSrc, setImageSrc] = useState<string>(PORTRAIT_URLS.PROFILE_THUMB);
+  const [imageError, setImageError] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // 初始化：優先嘗試從本地儲存讀取
+  useEffect(() => {
+    const savedImage = localStorage.getItem('profile_image_rk');
+    if (savedImage) {
+      setImageSrc(savedImage);
+    }
+  }, []);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        setImageSrc(base64String);
+        setImageError(false);
+        localStorage.setItem('profile_image_rk', base64String);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className="px-6 py-12">
       <div className="flex flex-col items-center mb-16 text-center">
-        <div 
-          className="w-32 h-32 rounded-full bg-cover bg-center border-4 border-white/5 shadow-2xl mb-6 grayscale hover:grayscale-0 transition-all duration-1000"
-          style={{ backgroundImage: `url("${PORTRAIT_URLS.PROFILE_THUMB}")` }}
+        <input 
+          type="file" 
+          ref={fileInputRef} 
+          className="hidden" 
+          accept="image/*" 
+          onChange={handleFileChange}
         />
+        
+        <div 
+          onClick={() => fileInputRef.current?.click()}
+          className="w-32 h-32 rounded-full border-4 border-white/5 shadow-2xl mb-6 overflow-hidden bg-zinc-900 flex items-center justify-center group cursor-pointer relative"
+        >
+          {!imageError ? (
+            <img 
+              src={imageSrc} 
+              alt="Profile" 
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+              onError={() => {
+                if (!localStorage.getItem('profile_image_rk')) {
+                  setImageError(true);
+                }
+              }}
+            />
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-blue-900/40 via-black to-black text-blue-500">
+              <span className="text-4xl font-extralight tracking-[0.2em] ml-[0.2em]">RK</span>
+              <span className="text-[7px] mt-2 opacity-40 uppercase tracking-widest group-hover:opacity-100">Fix Image</span>
+            </div>
+          )}
+          {/* 懸停指示 */}
+          <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors flex items-center justify-center">
+             <span className="material-symbols-outlined text-white opacity-0 group-hover:opacity-30 text-sm">photo_camera</span>
+          </div>
+        </div>
+
         <h1 className="text-3xl font-light tracking-widest text-white mb-1">洪葦楷</h1>
         <p className="text-blue-500 text-xs tracking-[0.3em] font-medium uppercase mb-4">IT Teacher | Graduate Student</p>
         <div className="flex gap-4">
