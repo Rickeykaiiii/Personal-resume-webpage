@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     title: '水下無線光信道研究',
     description: 'Comprehensive investigation into signal propagation, turbulence modeling, and channel capacity for underwater optical communication links.',
     date: 'Sep 2023 - Dec 2023',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAdKj5skZJuSX6mkvCVIK6IZiMF1V03KXknGJs2IdMa1kCQM2jAJh2V9SuWZBYhccBpgFeW5pf4qPrjFku-edg463nF4ZUGlNIcvIq7hjzrJ_WpGrR-TP9-lgwhtgVrW-r2jEDMfzYI3MDN8nDCL9-B0AnNdwaAuQz16uq8KmkVEtZVp-G0YifFIp6OToSgubmsQlpldBxouPMSZmha5UGYmznnPd3KUkx2f9cG5KndYfsbWiznBZN2COLHGPctJdWbv5RCK-F8',
+    imageUrl: '/UWOC.jpg',
     color: 'emerald',
     url: '/uwoc-project.html'
   }
