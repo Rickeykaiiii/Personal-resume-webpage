@@ -1,12 +1,13 @@
 import React, { useState, useMemo } from 'react';
-import { PROJECTS } from '../constants.ts';
+import { PROJECTS } from '../constants';
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
   
   const categories = ['All', 'IT Education', 'Communication Engineering', 'Research'];
 
-  const filteredProjects = useMemo(() => {
+  // Fix: Removed space in variable name to correctly define 'filteredPROJECTS'
+  const filteredPROJECTS = useMemo(() => {
     if (filter === 'All') return PROJECTS;
     return PROJECTS.filter(p => p.category === filter);
   }, [filter]);
@@ -38,7 +39,7 @@ const Projects: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {filteredProjects.map((project) => (
+        {filteredPROJECTS.map((project) => (
           <div 
             key={project.id}
             className="group relative flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500"
