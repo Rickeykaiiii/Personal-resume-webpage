@@ -1,6 +1,5 @@
-
 import React, { useState, useMemo } from 'react';
-import { PROJECTS } from '../constants';
+import { PROJECTS } from '../constants.ts';
 
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');

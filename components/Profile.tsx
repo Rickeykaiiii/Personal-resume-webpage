@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { PORTRAIT_URLS, SKILLS, LANGUAGES } from '../constants';
+import { PORTRAIT_URLS, SKILLS, LANGUAGES } from '../constants.ts';
 
 const Profile: React.FC = () => {
   return (

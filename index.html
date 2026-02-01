@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant" class="dark">
 <head>
@@ -41,6 +40,34 @@
         .rns-font {
             font-family: 'RNS Sanz', 'Inter', sans-serif;
         }
+
+        /* 補足 App.tsx 中使用的動畫關鍵幀 */
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoom-in-95 {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes slide-in-bottom {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slide-in-bottom-deep {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-in {
+            animation-duration: 1000ms;
+            animation-fill-mode: forwards;
+        }
+        .fade-in { animation-name: fade-in; }
+        .zoom-in-95 { animation-name: zoom-in-95; }
+        .slide-in-from-bottom-4 { animation-name: slide-in-bottom; }
+        .slide-in-from-bottom-8 { animation-name: slide-in-bottom-deep; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-500 { animation-delay: 500ms; }
     </style>
 <script type="importmap">
 {

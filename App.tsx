@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Home from './components/Home';
-import Projects from './components/Projects';
-import Profile from './components/Profile';
+import Home from './components/Home.tsx';
+import Projects from './components/Projects.tsx';
+import Profile from './components/Profile.tsx';
 
 type Page = 'home' | 'about' | 'projects' | 'resume';
 
