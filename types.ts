@@ -10,6 +10,7 @@ export interface Project {
   date: string;
   imageUrl: string;
   color: string;
+  url?: string;
 }
 
 export interface Skill {

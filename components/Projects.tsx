@@ -40,12 +40,17 @@ const Projects: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {filteredPROJECTS.map((project) => (
-          <div 
+          <a
             key={project.id}
-            className="group relative flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500"
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group relative flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500 ${
+              project.url ? 'cursor-pointer' : 'cursor-default'
+            }`}
           >
             <div 
-              className="w-full aspect-video bg-cover bg-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
+              className="w-full aspect-video bg-cover bg-center opacity-90 group-hover:opacity-100 transition-all duration-700" 
               style={{ backgroundImage: `url("${project.imageUrl}")` }}
             />
             <div className="p-5 md:p-8">
@@ -58,8 +63,14 @@ const Projects: React.FC = () => {
               <p className="text-white/40 text-xs md:text-sm leading-relaxed serif-text line-clamp-3">
                 {project.description}
               </p>
+              {project.url && (
+                <div className="mt-4 flex items-center gap-2 text-blue-500 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span>查看詳情</span>
+                  <span>→</span>
+                </div>
+              )}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

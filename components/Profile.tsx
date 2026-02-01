@@ -56,7 +56,7 @@ const Profile: React.FC = () => {
             <img 
               src={imageSrc} 
               alt="Profile" 
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+              className="w-full h-full object-cover transition-all duration-1000"
               onError={handleImageError}
             />
           ) : (
