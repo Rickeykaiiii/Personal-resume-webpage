@@ -26,6 +26,6 @@ export const LANGUAGES: Language[] = [
 ];
 
 export const PORTRAIT_URLS = {
-  HOME_HERO: 'assets/IMG_9765.jpg',
-  PROFILE_THUMB: 'assets/IMG_9765.jpg'
+  HOME_HERO: '/IMG_9765.jpg',
+  PROFILE_THUMB: '/IMG_9765.jpg'
 };
