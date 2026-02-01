@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWOC 專利 - 複合光學系統發射裝置</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+        .carousel-image {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel-image.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 pyqo-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">Patent</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Hero Section -->
+            <div class="mb-16 text-center">
+                <span class="text-blue-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">Patent Innovation</span>
+                <h1 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight leading-tight">
+                    一种基于复合光学系统的<br class="hidden md:block">水下无线光通信发射装置及方法
+                </h1>
+                <p class="text-base md:text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    Underwater Wireless Optical Communication Transmitter Based on Composite Optical System
+                </p>
+            </div>
+
+            <!-- Patent Image Carousel -->
+            <div class="mb-16 rounded-2xl overflow-hidden border border-white/10 bg-black relative group">
+                <div class="aspect-video relative">
+                    <!-- Images -->
+                    <img src="/patent1.png" alt="專利圖 1" class="carousel-image active w-full h-full object-contain bg-white/5">
+                    <img src="/patent2.png" alt="專利圖 2" class="carousel-image w-full h-full object-contain bg-white/5">
+                    <img src="/patent3.png" alt="專利圖 3" class="carousel-image w-full h-full object-contain bg-white/5">
+                    <img src="/patent4.png" alt="專利圖 4" class="carousel-image w-full h-full object-contain bg-white/5">
+                    <img src="/patent5.png" alt="專利圖 5" class="carousel-image w-full h-full object-contain bg-white/5">
+                    <img src="/patent6.png" alt="專利圖 6" class="carousel-image w-full h-full object-contain bg-white/5">
+                    <img src="/patent7.png" alt="專利圖 7" class="carousel-image w-full h-full object-contain bg-white/5">
+                    <img src="/patent8.png" alt="專利圖 8" class="carousel-image w-full h-full object-contain bg-white/5">
+                    
+                    <!-- Navigation Arrows -->
+                    <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Indicators -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    <button class="indicator w-2 h-2 rounded-full bg-white transition-all duration-300" data-index="0"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" data-index="1"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" data-index="2"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" data-index="3"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" data-index="4"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" data-index="5"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" data-index="6"></button>
+                    <button class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300" data-index="7"></button>
+                </div>
+
+                <!-- Current Slide Number -->
+                <div class="absolute top-4 right-4 bg-black/50 px-3 py-1 rounded-full text-xs text-white/70">
+                    <span id="currentSlide">1</span> / 8
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-12">
+                <!-- Patent Overview -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專利概述</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        本發明涉及水下無線光通信領域，特別是一種基於複合光學系統的水下無線光通信發射裝置及方法。該技術通過創新的光學設計，有效解決了傳統水下光通信系統中存在的光束發散、能量損耗和傳輸距離受限等問題。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        複合光學系統採用多級光學元件組合，實現了光束的高效準直和聚焦，顯著提升了水下光信號的傳輸性能和通信質量。
+                    </p>
+                </section>
+
+                <!-- Technical Innovation -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術創新點</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">複合光學系統設計</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                採用創新的多級光學元件組合，包括準直透鏡、擴束鏡和聚焦透鏡等，實現光束的精確控制和優化傳輸。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">高效能量利用</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                通過光學系統優化設計，最大化光能利用效率，減少能量損耗，延長水下設備的工作時間。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">抗干擾能力增強</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                改進的光學結構有效減少了散射光的影響，提高了系統在渾濁水體中的抗干擾能力和信號穩定性。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">模塊化設計</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                採用模塊化結構設計，便於系統集成和維護，可根據不同應用場景靈活調整配置。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術特點</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
+                                <span class="text-blue-500">●</span>
+                                高準直度
+                            </h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                光束發散角小，傳輸方向性好，有效提升遠距離通信能力
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
+                                <span class="text-blue-500">●</span>
+                                寬適應性
+                            </h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                適用於不同水質環境，在清澈和渾濁水體中均能保持良好性能
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
+                                <span class="text-blue-500">●</span>
+                                低功耗
+                            </h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                優化的光路設計減少能量浪費，降低系統整體功耗
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
+                                <span class="text-blue-500">●</span>
+                                易於集成
+                            </h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                緊湊的結構設計便於與現有水下設備集成使用
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Application Scenarios -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">應用場景</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-blue-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">水下機器人系統：</strong>
+                                為 AUV、ROV 等水下載具提供高速數據傳輸鏈路
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-blue-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">海洋觀測網絡：</strong>
+                                構建水下傳感器節點間的光通信網絡
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-blue-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">水下影像傳輸：</strong>
+                                實時傳輸高清水下影像和視頻數據
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-blue-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">海洋科學研究：</strong>
+                                支持深海探測和海洋環境監測的數據回傳
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Advantages -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">相比傳統技術的優勢</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-sm font-medium text-blue-400 mb-3 uppercase tracking-wider">傳統單一光學系統</h3>
+                                <ul class="space-y-2 text-xs text-white/50">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-400">×</span>
+                                        光束發散角大
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-400">×</span>
+                                        能量利用率低
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-400">×</span>
+                                        傳輸距離受限
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-red-400">×</span>
+                                        抗干擾能力弱
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-blue-400 mb-3 uppercase tracking-wider">複合光學系統</h3>
+                                <ul class="space-y-2 text-xs text-white/70">
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-green-400">✓</span>
+                                        高準直度光束
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-green-400">✓</span>
+                                        能量利用率提升 40%
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-green-400">✓</span>
+                                        傳輸距離增加 50%
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="text-green-400">✓</span>
+                                        強抗干擾性能
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Implementation Method -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">實施方法</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        本發明的水下無線光通信發射裝置主要包括以下組成部分和實施步驟：
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
+                            <h3 class="text-base font-medium text-white mb-2">1. 光源模塊</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                採用高功率 LED 或激光二極管作為光源，配備驅動電路和調制模塊，實現數據信號的光強調制。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
+                            <h3 class="text-base font-medium text-white mb-2">2. 複合光學系統</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                由準直透鏡組、擴束系統和聚焦透鏡組構成，對光源發出的光束進行多級處理，實現光束整形和優化傳輸。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
+                            <h3 class="text-base font-medium text-white mb-2">3. 光束控制單元</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                包括光束偏轉機構和跟蹤系統，確保光束精確對準接收端，補償載體運動造成的偏差。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
+                            <h3 class="text-base font-medium text-white mb-2">4. 防水封裝結構</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                採用高透光率的防水材料和密封設計，確保系統在深水環境下的可靠運行，同時減少光學界面的反射損耗。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a href="/" class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WEIKAI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Carousel Script -->
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-image');
+        const indicators = document.querySelectorAll('.indicator');
+        const currentSlideText = document.getElementById('currentSlide');
+        const totalSlides = images.length;
+
+        function showSlide(index) {
+            // Remove active class from all images
+            images.forEach(img => img.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('bg-white'));
+            indicators.forEach(ind => ind.classList.add('bg-white/30'));
+            
+            // Add active class to current image
+            images[index].classList.add('active');
+            indicators[index].classList.remove('bg-white/30');
+            indicators[index].classList.add('bg-white');
+            
+            // Update slide number
+            currentSlideText.textContent = index + 1;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentIndex);
+        }
+
+        // Event listeners for navigation buttons
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+        // Event listeners for indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(currentIndex);
+            });
+        });
+
+        // Auto-play carousel
+        let autoPlayInterval = setInterval(nextSlide, 4000);
+
+        // Pause auto-play on hover
+        const carouselContainer = document.querySelector('.group');
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+    </script>
+</body>
+</html>

@@ -2,6 +2,16 @@ import { Project, Skill, Language } from './types';
 
 export const PROJECTS: Project[] = [
   {
+    id: '1',
+    category: 'Research',
+    title: 'UWOC 複合光學系統專利',
+    description: 'A novel underwater wireless optical communication transmitter based on composite optical system, featuring enhanced beam collimation and energy efficiency.',
+    date: '2024',
+    imageUrl: '/patent1.png',
+    color: 'blue',
+    url: '/uwoc-patent.html'
+  },
+  {
     id: '2',
     category: 'Research',
     title: '水下無線光信道研究',
