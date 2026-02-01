@@ -27,5 +27,5 @@ export const LANGUAGES: Language[] = [
 
 export const PORTRAIT_URLS = {
   HOME_HERO: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD4jX8NMo3CokO5V19NFY_TWF0tcFVY3Ce_3vMJjd-JqwFmaLxiMYC-CzSxk4tj33qErKjWqjDljfBJUIpdaJ37T-Pp80IocKM2wqwSGDz64Frwsl85-JB-kSsWTuC90Q_0bP8oZjvnP5S-w7nxSFvW3kooDGmpIgxSCFK0HDdwCUR3OpotNV3hug7YjepdGn4BhF8zy7FSx6SeLQi-GU-b0iRKIjJEFbce-ViNsiyF6cTGrZWvRDKRCDtEVhBUsa3lRH-qIn4X',
-  PROFILE_THUMB: 'IMG_9765.jpg'
+  PROFILE_THUMB: 'assets/IMG_9765.jpg'
 };
