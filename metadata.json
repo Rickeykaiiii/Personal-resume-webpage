@@ -1,5 +1,5 @@
 {
-  "name": "Hong Weikai Portfolio",
-  "description": "A comprehensive personal portfolio for Hong Weikai, featuring academic achievements, 6G research projects, and IT education expertise.",
+  "name": "Generative Abstract Sphere",
+  "description": "A minimal 3D generative art project using Three.js and custom GLSL shaders.",
   "requestFramePermissions": []
 }
