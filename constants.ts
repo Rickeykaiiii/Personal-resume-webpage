@@ -28,5 +28,5 @@ export const LANGUAGES: Language[] = [
 
 export const PORTRAIT_URLS = {
   HOME_HERO: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD4jX8NMo3CokO5V19NFY_TWF0tcFVY3Ce_3vMJjd-JqwFmaLxiMYC-CzSxk4tj33qErKjWqjDljfBJUIpdaJ37T-Pp80IocKM2wqwSGDz64Frwsl85-JB-kSsWTuC90Q_0bP8oZjvnP5S-w7nxSFvW3kooDGmpIgxSCFK0HDdwCUR3OpotNV3hug7YjepdGn4BhF8zy7FSx6SeLQi-GU-b0iRKIjJEFbce-ViNsiyF6cTGrZWvRDKRCDtEVhBUsa3lRH-qIn4X',
-  PROFILE_THUMB: 'IMG_9765.jpg'
+  PROFILE_THUMB: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDYDQ8O2Ee6On5ZVgVTyb8Bjf3w7BkJxmu4uWyniDKqQhbJTEWmkR2Pp-BjEiV6t5MCfTJM4gOGKqZwVktmx72K_5tMJ-U5zgZITC4Jy-uoRpGKP_XgQqiU_if4NIUQqNho9w8RAt_fvzGUec5UMrIpH7E6Iae6io4ut6JQm_TL8-8Ulj7Z8SNIQME4pydYDQf-RbZGjxTEBf4ck-9RLtWGcwdY-1FVogxJSl_jdCcUb9B2T7TnLcz0RtnSeel-4We30SMH1KsD'
 };
