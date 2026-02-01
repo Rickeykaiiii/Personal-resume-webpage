@@ -36,35 +36,24 @@ const Home: React.FC = () => {
         vUv = uv;
         vNormal = normalize(normalMatrix * normal);
         
-        // 投影頂點到屏幕空間以計算與滑鼠的距離
         vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
         vViewPosition = -mvPosition.xyz;
         vec4 projectedPos = projectionMatrix * mvPosition;
         vec2 screenPos = projectedPos.xy / projectedPos.w;
         
         float dist = distance(screenPos, uMouse);
-        
-        // 交互影響力範圍與強度
         float influence = 1.0 - smoothstep(0.0, 0.7, dist);
-        
-        // 規則的斜向坐標
         float diagonal = (position.x - position.y) * 1.8;
-        
-        // 核心波浪邏輯
         float waveFreq = 12.0; 
         
-        // 【擾動邏輯】：滑鼠靠近時，擾亂波浪的相位與頻率
         float phaseShift = influence * 3.5 * sin(uTime * 1.5);
         float localFreqDistortion = influence * 5.0;
         
         float wave = sin(diagonal * (waveFreq + localFreqDistortion) + uTime * 1.2 + phaseShift) * 0.06;
-        
         float subWave = sin(diagonal * waveFreq * 2.0 - uTime * 0.6 + influence * 2.0) * 0.015;
         wave += subWave;
 
-        // 局部物理推開感
         float mousePush = influence * 0.15;
-        
         float elevation = wave + mousePush;
         vec3 newPosition = position + normal * elevation;
         
@@ -81,7 +70,6 @@ const Home: React.FC = () => {
       uniform float uTime;
 
       void main() {
-        // 克萊恩藍色彩定義
         vec3 kleinBlue = vec3(0.0, 0.184, 0.655); 
         vec3 deepBlueShadow = vec3(0.0, 0.02, 0.1); 
         vec3 vibrantBlue = vec3(0.05, 0.25, 0.8);   
@@ -167,21 +155,6 @@ const Home: React.FC = () => {
   return (
     <div className="relative w-full h-full overflow-hidden bg-black">
       <div ref={containerRef} className="absolute inset-0 z-0" />
-      
-      <div className="absolute top-12 left-12 z-10 pointer-events-none">
-        <div className="flex flex-col gap-2">
-          <p className="text-white/10 text-[10px] tracking-[2.0em] font-light uppercase select-none">
-            Klein.Disturbance
-          </p>
-          <div className="h-[1px] w-32 bg-gradient-to-r from-white/10 to-transparent" />
-        </div>
-      </div>
-
-      <div className="absolute bottom-12 right-12 z-10 pointer-events-none text-right">
-        <p className="text-white/5 text-[8px] tracking-[1.0em] font-light uppercase select-none">
-          Interactive Matte Klein Blue // v3.4
-        </p>
-      </div>
     </div>
   );
 };

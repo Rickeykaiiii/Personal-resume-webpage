@@ -3,16 +3,6 @@ import { Project, Skill, Language } from './types';
 
 export const PROJECTS: Project[] = [
   {
-    id: '1',
-    category: 'Communication Engineering',
-    title: '6G通信項目',
-    titleEn: '6G Communication Project',
-    description: 'Research on next-generation communication protocols, focusing on ultra-reliable low-latency architectures for future networks.',
-    date: 'Jan 2024 - Present',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDPt75Re0Tq1PM5n77e-k6zXgyaPax18uFjMJh6LS27oL9O-5QBg3hBUWVfoMsR55-lic0zTxHCDEeETJcbvMt0R0kDH1Ooasece5k3T1AkZm1XFlyXQD2R_q_ZF2YuWIwhEsgmsu1Ve8vrM7KaS5ouRh0C20-_m3EGBuPh_u0Jz9StYt1jdeIXc3YOfMwbIYN6LBFIjMTNRqs-weeUy8dPl8IDLtt2QiBI7iZHU29C2D4fxM0wEnw2DfuC8JX8jBbSzBVslk27',
-    color: 'blue'
-  },
-  {
     id: '2',
     category: 'Research',
     title: '水下無線光信道研究',
@@ -20,15 +10,6 @@ export const PROJECTS: Project[] = [
     date: 'Sep 2023 - Dec 2023',
     imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAdKj5skZJuSX6mkvCVIK6IZiMF1V03KXknGJs2IdMa1kCQM2jAJh2V9SuWZBYhccBpgFeW5pf4qPrjFku-edg463nF4ZUGlNIcvIq7hjzrJ_WpGrR-TP9-lgwhtgVrW-r2jEDMfzYI3MDN8nDCL9-B0AnNdwaAuQz16uq8KmkVEtZVp-G0YifFIp6OToSgubmsQlpldBxouPMSZmha5UGYmznnPd3KUkx2f9cG5KndYfsbWiznBZN2COLHGPctJdWbv5RCK-F8',
     color: 'emerald'
-  },
-  {
-    id: '3',
-    category: 'IT Education',
-    title: '校園二手交易平台推廣項目',
-    description: 'Leading a digital transformation project for campus sustainability, managing platform deployment and user engagement strategies.',
-    date: 'Mar 2023 - Aug 2023',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrvrTlhrxtTP7g9Ny1ursFIaUY1nEosTQG81Jh3l6wwAMCjA7LfEkmyhJAbl4xGjv11hPxesUSYJ3F-bAWYFq3kywbUy1ZGWn9PW4WWHRhQB6Bz4scXGkO79xQaUBtAgvZCOIWX0HroDFimbWY-LFKdHwjd3hp2YZC7gEGPtxom5knJz7Epa7rh2MrlATFDnFRfQRqSLU0_kIYqSz0ymYIyBHvrg-zs6usoEtFDlIz3SrMl9qJhhaywnugrS420V-Bcymv9cFk',
-    color: 'amber'
   }
 ];
 

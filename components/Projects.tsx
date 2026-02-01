@@ -13,74 +13,54 @@ const Projects: React.FC = () => {
   }, [filter]);
 
   return (
-    <div className="px-4 py-8">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 serif-text">Featured Work</h2>
-        <p className="text-sm text-slate-600 dark:text-slate-400 serif-text">
-          Showcasing research in Communication Engineering and IT Education initiatives.
+    <div className="px-6 py-12">
+      <div className="mb-12">
+        <h2 className="text-4xl font-light text-white mb-3 serif-text tracking-tight">Selected Projects</h2>
+        <div className="h-[1px] w-12 bg-blue-600 mb-4" />
+        <p className="text-sm text-white/40 serif-text max-w-md">
+          A curated collection of research initiatives and digital solutions.
         </p>
       </div>
 
-      <div className="flex gap-2 pb-6 overflow-x-auto no-scrollbar">
+      <div className="flex gap-4 pb-10 overflow-x-auto no-scrollbar">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`flex h-10 shrink-0 items-center justify-center rounded-lg px-6 shadow-sm transition-all whitespace-nowrap ${
+            className={`text-[10px] tracking-[0.15em] px-4 py-2 rounded-full border transition-all duration-300 ${
               filter === cat 
-                ? 'bg-primary text-white font-semibold' 
-                : 'bg-white/5 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-medium'
+                ? 'bg-white text-black border-white' 
+                : 'bg-transparent border-white/10 text-white/50 hover:border-white/30'
             }`}
           >
-            <p className="text-sm serif-text">{cat}</p>
+            {cat.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filteredProjects.map((project) => (
           <div 
             key={project.id}
-            className="flex flex-col items-stretch justify-start rounded-2xl bg-white dark:bg-[#151b27] border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            className="group relative flex flex-col bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-500"
           >
             <div 
-              className="w-full bg-center bg-no-repeat aspect-[16/9] bg-cover" 
+              className="w-full aspect-video bg-cover bg-center grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
               style={{ backgroundImage: `url("${project.imageUrl}")` }}
             />
-            <div className="flex w-full flex-col items-stretch justify-center gap-1 p-5">
-              <div className="flex items-center mb-1">
-                <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider serif-text ${
-                  project.color === 'blue' ? 'bg-blue-900/40 text-blue-400' :
-                  project.color === 'emerald' ? 'bg-emerald-900/40 text-emerald-400' :
-                  'bg-amber-900/40 text-amber-400'
-                }`}>
-                  {project.category}
-                </span>
-              </div>
-              <h3 className="text-slate-900 dark:text-white text-xl font-bold leading-tight">
-                {project.titleEn && <span className="serif-text block text-sm opacity-60">{project.titleEn}</span>}
+            <div className="p-8">
+              <span className="text-[9px] tracking-[0.2em] text-blue-400 font-bold uppercase mb-3 block">
+                {project.category}
+              </span>
+              <h3 className="text-white text-xl font-medium mb-3">
                 {project.title}
               </h3>
-              <p className="text-slate-600 dark:text-slate-400 text-sm font-normal leading-relaxed mt-2 serif-text">
+              <p className="text-white/40 text-sm leading-relaxed serif-text line-clamp-3">
                 {project.description}
               </p>
-              <div className="flex items-center justify-between mt-6">
-                <div className="flex items-center text-slate-500 dark:text-slate-500 gap-2">
-                  <span className="material-symbols-outlined text-lg">calendar_today</span>
-                  <p className="text-xs font-medium serif-text">{project.date}</p>
-                </div>
-                <button className="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold shadow-sm active:opacity-90 transition-opacity serif-text">
-                  View Details
-                </button>
-              </div>
             </div>
           </div>
         ))}
-        {filteredProjects.length === 0 && (
-          <div className="py-20 text-center text-slate-500">
-            No projects found in this category.
-          </div>
-        )}
       </div>
     </div>
   );
