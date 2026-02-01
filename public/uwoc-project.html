@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,13 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .serif-text {
             font-family: Georgia, 'Times New Roman', serif;
         }
     </style>
 </head>
+
 <body class="bg-black text-white min-h-screen">
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
@@ -31,7 +34,8 @@
         <div class="max-w-4xl mx-auto">
             <!-- Hero Section -->
             <div class="mb-16 text-center">
-                <span class="text-blue-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">Communication Technology</span>
+                <span class="text-blue-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">Communication
+                    Technology</span>
                 <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">水下無線光通信</h1>
                 <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
                     Underwater Wireless Optical Communication (UWOC)
@@ -49,10 +53,20 @@
                 <section>
                     <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術簡介</h2>
                     <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        水下無線光通信（Underwater Wireless Optical Communication, UWOC）是一種利用光波在水下環境中傳輸信息的通信技術。與傳統的聲學通信和射頻通信相比，UWOC 具有高帶寬、低延遲、強保密性等顯著優勢。
+                        水下無線光通信（Underwater Wireless Optical Communication, UWOC）是一種利用<strong
+                            class="text-white">藍綠光波段（450-550nm）</strong>在水下環境中傳輸信息的通信技術，該波段因海水吸收損失最小而成為水下光傳輸的"透明窗口"。與傳統的聲學通信和射頻通信相比，UWOC
+                        具有高帶寬、低延遲、強保密性等顯著優勢。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        UWOC
+                        的核心原理是通過激光二極管（LD）或發光二極管（LED）發射調製後的光信號，經水下信道傳輸至接收端，由光電探測器（APD/PIN）轉換為電信號實現通信。其系統架構主要分為視距（LOS）、非視距（NLOS）、擴散式和回射式四種配置，分別適用不同水下場景。
                     </p>
                     <p class="text-white/70 leading-relaxed serif-text">
-                        當前水下無線通訊的核心技術主要分為<strong class="text-white">聲學通訊</strong>、<strong class="text-white">射頻（RF）通訊</strong>與<strong class="text-white">無線光通訊</strong>三大類。聲學通訊與射頻通訊大多採用 KHz 頻段進行信號傳輸，雖具備優異的高穿透性，能將訊號傳送至數公里外，但僅能傳輸文字等簡化資訊；而無線光通訊則採用 THz 高頻波段，不僅可傳輸即時影像等高階資訊，傳輸速率更可達 Gbps 等級，具備指向性強、天線面積小、頻寬大等獨特技術優勢。
+                        當前水下無線通訊的核心技術主要分為<strong class="text-white">聲學通訊</strong>、<strong
+                            class="text-white">射頻（RF）通訊</strong>與<strong
+                            class="text-white">無線光通訊</strong>三大類。聲學通訊與射頻通訊大多採用 KHz
+                        頻段進行信號傳輸，雖具備優異的高穿透性，能將訊號傳送至數公里外，但僅能傳輸文字等簡化資訊；而無線光通訊則採用 THz 高頻波段，不僅可傳輸即時影像等高階資訊，傳輸速率更可達 <strong
+                            class="text-white">10 Gbps 等級</strong>，具備指向性強、天線面積小、頻寬大等獨特技術優勢。
                     </p>
                 </section>
 
@@ -61,27 +75,34 @@
                     <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">核心優勢</h2>
                     <div class="space-y-4">
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">高傳輸速率</h3>
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">超高傳輸速率</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                可達 Gbps 等級的數據傳輸速度，遠超聲學通信的 Kbps 級別，能夠支持高清視頻、大容量數據的實時傳輸。
+                                實驗室環境下已實現 7.2-12.4 Gbps 傳輸速率，商用系統可穩定提供數十 Mbps 至數 Gbps 帶寬，遠超聲學通信的 Kbps 級別，支持 4K
+                                高清視頻、大容量科學數據的實時傳輸。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">低延遲特性</h3>
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">超低傳輸延遲</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                光速傳播使得信號延遲極低，適合需要快速響應的水下操作和控制應用。
+                                光在水中傳播速度約 2.25×10⁸ m/s，延遲可低至微秒級，比聲學通信（毫秒至秒級延遲）提升數千倍，適合水下機器人遙控、實時控制等對延遲敏感的應用。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">強保密性</h3>
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">高安全性與隱蔽性</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                指向性強，不易被截獲，為軍事和商業應用提供了良好的保密性能。
+                                光束指向性強（發散角可低至數毫弧度），信號傳播範圍可控，不易被截獲或干擾；且無電磁輻射，不會暴露設備位置，適用於軍事和敏感商業場景。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">抗電磁干擾</h3>
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">小型化與低功耗</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                光波不受電磁干擾影響，在複雜電磁環境下仍能穩定工作。
+                                光學收發器體積小、重量輕（可集成於微型潛航器），功耗僅為聲學設備的幾十分之一，有利於延長水下設備續航時間。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">環保無干擾</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                不產生影響海洋生物的聲學噪聲，對海洋生態環境友好；且不受電磁干擾，在複雜電磁環境下仍能穩定工作。
                             </p>
                         </div>
                     </div>
@@ -94,25 +115,37 @@
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
                             <h3 class="text-base font-medium text-white mb-2">水下機器人通信</h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                實現 AUV、ROV 等水下載具與母船或基站之間的高速數據傳輸
+                                實現 AUV、ROV 等水下載具與母船間的高速數據傳輸，支持機器人集群協作作業
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">海洋監測網絡</h3>
+                            <h3 class="text-base font-medium text-white mb-2">海洋環境監測</h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                構建水下傳感器網絡，實時傳輸海洋環境數據和影像信息
+                                構建水下傳感器網絡，實時傳輸水質、溫鹽、洋流數據及珊瑚礁、魚類棲息地監測影像
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">水下考古探測</h3>
+                            <h3 class="text-base font-medium text-white mb-2">水下考古與探測</h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                高清影像實時回傳，協助水下文物發掘和記錄工作
+                                高清影像實時回傳，協助水下文物發掘、沉船調查和海底地形測繪工作
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">潛艇間通信</h3>
+                            <h3 class="text-base font-medium text-white mb-2">軍事防務應用</h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                提供安全、高速的軍事通信鏈路，增強水下作戰能力
+                                潛艇間通信、水下戰術網絡、港口安防監測，提供隱蔽高速的戰術通信鏈路
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">海洋資源開發</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                近海油氣平台監測、水下管道檢測、遠程操控水下作業設備
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">災害預防應對</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                海嘯、海底火山爆發監測數據實時傳輸，協助災害預警和應急回應
                             </p>
                         </div>
                     </div>
@@ -125,53 +158,100 @@
                         <div class="flex items-start gap-3">
                             <span class="text-blue-500 mt-1 flex-shrink-0">•</span>
                             <div>
-                                <strong class="text-white">水質影響：</strong>
-                                海水濁度、懸浮顆粒、海洋生物等會造成光信號的吸收和散射，限制傳輸距離
+                                <strong class="text-white">光信號衰減與散射：</strong>
+                                海水的吸收（純水、溶解有機物、浮游生物）和散射（懸浮顆粒）會導致信號強度指數衰減，純淨海水傳輸距離可達百米級，沿岸濁水僅數十米
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-blue-500 mt-1 flex-shrink-0">•</span>
                             <div>
-                                <strong class="text-white">環境湍流：</strong>
-                                溫度、鹽度變化引起的折射率波動會導致光束漂移和信號衰減
+                                <strong class="text-white">海洋湍流影響：</strong>
+                                溫度、鹽度變化引起的折射率波動會導致光束漂移、閃爍和時域色散，造成信號失真
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-blue-500 mt-1 flex-shrink-0">•</span>
                             <div>
-                                <strong class="text-white">對準要求：</strong>
-                                強指向性要求發射端與接收端精確對準，增加了系統複雜度
+                                <strong class="text-white">精確對準難題：</strong>
+                                狹光束傳輸要求發射端與接收端精確對準（指向、捕獲、跟蹤,PAT），海洋流動和設備移動會加劇對準難度
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-blue-500 mt-1 flex-shrink-0">•</span>
                             <div>
-                                <strong class="text-white">功耗限制：</strong>
-                                水下設備能源有限，需要在性能和功耗之間找到平衡
+                                <strong class="text-white">能量供應限制：</strong>
+                                水下設備依賴電池供電，高功率光學發射器會加速電量消耗，需在傳輸性能和功耗間平衡
                             </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-blue-500 mt-1 flex-shrink-0">•</span>
+                            <div>
+                                <strong class="text-white">背景噪聲干擾：</strong>
+                                表層水域受太陽光干擾，深層水域存在生物發光現象，都會影響接收端信噪比
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-blue-500 mt-1 flex-shrink-0">•</span>
+                            <div>
+                                <strong class="text-white">非視距傳輸困難：</strong>
+                                水下障礙物（礁石、沉船）會阻斷視距鏈路，非視距傳輸需依賴光反射，信號損失顯著
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Solutions -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">關鍵技術突破</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">信道建模與補償技術</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                基於蒙特卡羅模擬和輻射傳輸方程建立精確信道模型，採用最大比合并（MRC）、正交頻分復用（OFDM）等技術抵抗信道衰減；通過自適應調製編碼（AMC）根據信道狀態動態調整傳輸參數
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">空間分集與MIMO技術</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                採用單輸入多輸出（SIMO）、多輸入多輸出（MIMO）架構，通過多發射端和多接收端配置減小湍流和散射影響，實驗證明2×2 MIMO可使傳輸距離提升30%以上
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">高精度對準跟蹤系統</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                集成微機電系統（MEMS）、光學天線陣列和智能跟蹤算法，實現自動指向、捕獲和跟蹤；通過擴散光束降低對準要求，平衡傳輸距離和對準難度
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-blue-400 mb-2">混合通信架構</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                結合聲學通信（長距離導航）和光通信（高速數據傳輸）的混合系統，聲學信號用於設備定位和粗對準，光通信負責大容量數據傳輸，提升系統可靠性
+                            </p>
                         </div>
                     </div>
                 </section>
 
                 <!-- Future Development -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">未來發展</h2>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">未來發展方向</h2>
                     <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        隨著 6G 通信技術的發展，UWOC 作為水下通信的重要組成部分，將在以下方向持續演進：
+                        隨著 6G 通信技術和水下物聯網（IoUT）的發展，UWOC 作為水下通信的核心技術，將在以下方向實現重大突破：
                     </p>
-                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-2 text-sm text-white/60">
-                        <p>→ 開發自適應光束控制技術，提升對準精度和系統穩定性</p>
-                        <p>→ 研究混合通信系統，結合聲學、RF 和光學通信的優勢</p>
-                        <p>→ 應用人工智能優化信道估計和信號處理算法</p>
-                        <p>→ 探索量子通信技術在水下環境的應用潛力</p>
-                        <p>→ 與水下物聯網、海洋大數據深度融合</p>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
+                        <p>→ 長距離傳輸技術：開發高功率藍綠光激光器和靈敏光探測器，結合中继節點實現數百米至千米級傳輸</p>
+                        <p>→ 智能信號處理：基於人工智能和機器學習優化信道估計、干擾抑制和誤碼糾錯算法，提升複雜水環境適應能力</p>
+                        <p>→ 能量收集技術：集成海洋能、生物能等能量收集模塊，實現水下設備長期自主運行</p>
+                        <p>→ 量子水下通信：探索量子糾纏和量子密鑰分發技術在UWOC中的應用，實現絕對安全的水下通信</p>
+                        <p>→ 網絡化部署：發展水下光通信網絡協議，實現多節點、多跳動態網絡，支持大規模水下傳感器網絡</p>
+                        <p>→ 產業化應用：開發標準化、低成本的商用UWOC模塊，推動海洋開發、環境監測等領域的大規模應用</p>
                     </div>
                 </section>
             </div>
 
             <!-- Back Button -->
             <div class="mt-16 text-center">
-                <a href="/" class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
                     返回作品集
                 </a>
             </div>
@@ -185,4 +265,5 @@
         </div>
     </footer>
 </body>
+
 </html>
