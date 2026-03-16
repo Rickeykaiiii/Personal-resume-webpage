@@ -86,17 +86,43 @@ const Profile: React.FC = () => {
       <div className="grid grid-cols-1 gap-12 md:gap-16">
         <section>
           <h2 className="text-[10px] tracking-[0.4em] text-white/30 uppercase mb-6 md:mb-8 border-b border-white/5 pb-3 md:pb-4">Education</h2>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 hover:bg-white/[0.07] transition-colors duration-500">
-            <div className="flex gap-4 md:gap-6 items-start">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden border border-white/10">
-                <img src="/assets/bupt-logo.png" alt="BUPT" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+          <div className="space-y-4">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 hover:bg-white/[0.07] transition-colors duration-500">
+              <div className="flex gap-4 md:gap-6 items-start">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden border border-white/10">
+                  <img src="/assets/images/bupt-logo.png" alt="BUPT" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-medium text-white mb-1">Beijing University of Posts and Telecommunications</h3>
+                  <p className="text-blue-400 text-xs md:text-sm mb-1 font-medium tracking-wide">Graduate Research / Communication Engineering</p>
+                  <p className="text-white/30 text-[10px] tracking-wider">2023 – Present</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-medium text-white mb-1">Beijing University of Posts and Telecommunications</h3>
-                <p className="text-blue-400 text-xs md:text-sm mb-3 md:mb-4 font-medium tracking-wide">Graduate Research / Communication Engineering</p>
-                <p className="text-white/40 text-xs md:text-sm leading-relaxed serif-text">
-                  Focusing on next-generation network architectures and the integration of pedagogical technologies in modern IT education.
-                </p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 hover:bg-white/[0.07] transition-colors duration-500">
+              <div className="flex gap-4 md:gap-6 items-start">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden border border-white/10">
+                  <img src="/assets/images/bupt-logo.png" alt="BUPT" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-medium text-white mb-1">Beijing University of Posts and Telecommunications</h3>
+                  <p className="text-blue-400 text-xs md:text-sm mb-1 font-medium tracking-wide">Bachelor's Degree / Communication Engineering</p>
+                  <p className="text-white/30 text-[10px] tracking-wider mb-3 md:mb-4">2019 – 2023</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 hover:bg-white/[0.07] transition-colors duration-500">
+              <div className="flex gap-4 md:gap-6 items-start">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden border border-white/10">
+                  <img src="/assets/images/cdsj-logo.png" alt="CDSJ" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-medium text-white mb-1">聖若瑟教區中學第五校</h3>
+                  <p className="text-blue-400 text-xs md:text-sm mb-1 font-medium tracking-wide">St. Joseph's Parish Secondary School No. 5</p>
+                  <p className="text-white/30 text-[10px] tracking-wider">2006 – 2019</p>
+                </div>
               </div>
             </div>
           </div>

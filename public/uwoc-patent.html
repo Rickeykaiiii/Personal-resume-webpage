@@ -16,16 +16,34 @@
             font-family: Georgia, 'Times New Roman', serif;
         }
 
-        .carousel-image {
-            display: none;
+        .main-image {
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.25s ease-in-out;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
-
-        .carousel-image.active {
-            display: block;
+        .main-image.active {
             opacity: 1;
         }
+        .thumbnail {
+            opacity: 0.4;
+            transition: opacity 0.2s ease, border-color 0.2s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .thumbnail.active {
+            opacity: 1;
+            border-color: #3b82f6;
+        }
+        .thumbnail:hover:not(.active) {
+            opacity: 0.75;
+            border-color: rgba(255,255,255,0.2);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 
@@ -51,68 +69,50 @@
                     Underwater Wireless Optical Communication Transmitter Based on Composite Optical System
                 </p>
                 <p class="text-sm text-white/40 mt-4 tracking-wider">
-                    申請單位：北京郵電大學 | 發明人：洪偉凱 (HONG WEIKAI) 等
+                    申請單位：北京郵電大學 | 發明人：洪葦楷 HONG WAI KAI
                 </p>
             </div>
 
-            <div class="mb-16 rounded-2xl overflow-hidden border border-white/10 bg-black relative group">
-                <div class="aspect-video relative">
-                    <img src="/assets/patent1.png" alt="發射裝置整體結構圖"
-                        class="carousel-image active w-full h-full object-contain bg-white/5">
-                    <img src="/assets/patent2.png" alt="LED芯片陣列與CPC裝配圖"
-                        class="carousel-image w-full h-full object-contain bg-white/5">
-                    <img src="/assets/patent3.png" alt="菲涅爾透鏡結構示意圖"
-                        class="carousel-image w-full h-full object-contain bg-white/5">
-                    <img src="/assets/patent4.png" alt="光強分佈對比圖"
-                        class="carousel-image w-full h-full object-contain bg-white/5">
-                    <img src="/assets/patent5.png" alt="整形後出射光束角強度分佈"
-                        class="carousel-image w-full h-full object-contain bg-white/5">
-                    <img src="/assets/patent6.png" alt="整體光線追跡仿真圖"
-                        class="carousel-image w-full h-full object-contain bg-white/5">
-                    <img src="/assets/patent7.png" alt="6米處光斑照度分佈"
-                        class="carousel-image w-full h-full object-contain bg-white/5">
-
-                    <button id="prevBtn"
-                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                            </path>
-                        </svg>
-                    </button>
-                    <button id="nextBtn"
-                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </button>
+            <div class="mb-16">
+                <!-- 主圖預覽 -->
+                <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/50 relative mb-3">
+                    <div class="aspect-video relative">
+                        <img src="/assets/images/patent1.png" alt="發射裝置整體結構圖" class="main-image active">
+                        <img src="/assets/images/patent2.png" alt="LED芯片陣列與CPC裝配圖" class="main-image">
+                        <img src="/assets/images/patent3.png" alt="菲涅爾透鏡結構示意圖" class="main-image">
+                        <img src="/assets/images/patent4.png" alt="光強分佈對比圖" class="main-image">
+                        <img src="/assets/images/patent5.png" alt="整形後出射光束角強度分佈" class="main-image">
+                        <img src="/assets/images/patent6.png" alt="整體光線追跡仿真圖" class="main-image">
+                        <img src="/assets/images/patent7.png" alt="6米處光斑照度分佈" class="main-image">
+                    </div>
+                    <div class="absolute top-4 right-4 bg-black/60 px-3 py-1 rounded-full text-xs text-white/60">
+                        <span id="currentSlide">1</span> / 7
+                    </div>
                 </div>
 
-                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                    <button class="indicator w-2 h-2 rounded-full bg-white transition-all duration-300"
-                        data-index="0"></button>
-                    <button
-                        class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300"
-                        data-index="1"></button>
-                    <button
-                        class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300"
-                        data-index="2"></button>
-                    <button
-                        class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300"
-                        data-index="3"></button>
-                    <button
-                        class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300"
-                        data-index="4"></button>
-                    <button
-                        class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300"
-                        data-index="5"></button>
-                    <button
-                        class="indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-all duration-300"
-                        data-index="6"></button>
-                </div>
-
-                <div class="absolute top-4 right-4 bg-black/50 px-3 py-1 rounded-full text-xs text-white/70">
-                    <span id="currentSlide">1</span> / 7
+                <!-- 縮圖條 -->
+                <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1" id="thumbnailStrip">
+                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5 active" data-index="0">
+                        <img src="/assets/images/patent1.png" class="w-full h-full object-contain">
+                    </button>
+                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="1">
+                        <img src="/assets/images/patent2.png" class="w-full h-full object-contain">
+                    </button>
+                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="2">
+                        <img src="/assets/images/patent3.png" class="w-full h-full object-contain">
+                    </button>
+                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="3">
+                        <img src="/assets/images/patent4.png" class="w-full h-full object-contain">
+                    </button>
+                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="4">
+                        <img src="/assets/images/patent5.png" class="w-full h-full object-contain">
+                    </button>
+                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="5">
+                        <img src="/assets/images/patent6.png" class="w-full h-full object-contain">
+                    </button>
+                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="6">
+                        <img src="/assets/images/patent7.png" class="w-full h-full object-contain">
+                    </button>
                 </div>
             </div>
 
@@ -316,63 +316,34 @@
 
     <footer class="border-t border-white/5 py-8">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WEIKAI. All rights reserved.</p>
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-image');
-        const indicators = document.querySelectorAll('.indicator');
+        const mainImages = document.querySelectorAll('.main-image');
+        const thumbnails = document.querySelectorAll('.thumbnail');
         const currentSlideText = document.getElementById('currentSlide');
-        const totalSlides = images.length;
+        const totalSlides = mainImages.length;
 
         function showSlide(index) {
-            images.forEach(img => img.classList.remove('active'));
-            indicators.forEach(ind => ind.classList.remove('bg-white'));
-            indicators.forEach(ind => ind.classList.add('bg-white/30'));
+            mainImages.forEach(img => img.classList.remove('active'));
+            thumbnails.forEach(t => t.classList.remove('active'));
 
-            images[index].classList.add('active');
-            indicators[index].classList.remove('bg-white/30');
-            indicators[index].classList.add('bg-white');
-
+            mainImages[index].classList.add('active');
+            thumbnails[index].classList.add('active');
             currentSlideText.textContent = index + 1;
+            currentIndex = index;
+
+            thumbnails[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
 
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            showSlide(currentIndex);
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            showSlide(currentIndex);
-        }
-
-        document.getElementById('nextBtn').addEventListener('click', nextSlide);
-        document.getElementById('prevBtn').addEventListener('click', prevSlide);
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                currentIndex = index;
-                showSlide(currentIndex);
-            });
-        });
-
-        let autoPlayInterval = setInterval(nextSlide, 4000);
-
-        const carouselContainer = document.querySelector('.group');
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoPlayInterval);
-        });
-
-        carouselContainer.addEventListener('mouseleave', () => {
-            autoPlayInterval = setInterval(nextSlide, 4000);
-        });
+        thumbnails.forEach((t, i) => t.addEventListener('click', () => showSlide(i)));
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') showSlide((currentIndex - 1 + totalSlides) % totalSlides);
+            if (e.key === 'ArrowRight') showSlide((currentIndex + 1) % totalSlides);
         });
     </script>
 </body>

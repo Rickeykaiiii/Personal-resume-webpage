@@ -3,21 +3,21 @@ import { Project, Skill, Language } from './types';
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    category: 'Research',
+    category: 'Underwater Wireless Optical Communication',
     title: 'UWOC 複合光學系統專利',
     description: 'A novel underwater wireless optical communication transmitter based on composite optical system, featuring enhanced beam collimation and energy efficiency.',
     date: '2024',
-    imageUrl: '/assets/patent1.png',
+    imageUrl: '/assets/images/patent1.png',
     color: 'blue',
     url: '/uwoc-patent.html'
   },
   {
     id: '2',
-    category: 'Research',
+    category: 'Underwater Wireless Optical Communication',
     title: '水下無線光信道研究',
     description: 'Comprehensive investigation into signal propagation, turbulence modeling, and channel capacity for underwater optical communication links.',
     date: 'Sep 2023 - Dec 2023',
-    imageUrl: '/assets/UWOC.jpg',
+    imageUrl: '/assets/images/UWOC.jpg',
     color: 'emerald',
     url: '/uwoc-project.html'
   }
@@ -32,11 +32,11 @@ export const SKILLS: Skill[] = [
 
 export const LANGUAGES: Language[] = [
   { name: 'Cantonese', level: 'Native', percentage: 100 },
-  { name: 'Mandarin', level: 'Fluent', percentage: 95 },
-  { name: 'English', level: 'Professional', percentage: 80 }
+  { name: 'Mandarin', level: 'Native', percentage: 95 },
+  { name: 'English', level: 'Good', percentage: 80 }
 ];
 
 export const PORTRAIT_URLS = {
-  HOME_HERO: '/assets/photo.png',
-  PROFILE_THUMB: '/assets/photo.png'
+  HOME_HERO: '/assets/images/photo.png',
+  PROFILE_THUMB: '/assets/images/photo.png'
 };

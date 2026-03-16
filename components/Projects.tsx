@@ -4,7 +4,7 @@ import { PROJECTS } from '../constants';
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState('All');
   
-  const categories = ['All', 'IT Education', 'Communication Engineering', 'Research'];
+  const categories = ['All', 'Underwater Wireless Optical Communication', 'IT Project', 'AI/Robot'];
 
   // Fix: Removed space in variable name to correctly define 'filteredPROJECTS'
   const filteredPROJECTS = useMemo(() => {

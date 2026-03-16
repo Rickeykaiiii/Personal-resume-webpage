@@ -3,7 +3,7 @@ export type Page = 'home' | 'projects' | 'profile';
 
 export interface Project {
   id: string;
-  category: 'IT Education' | 'Communication Engineering' | 'Research';
+  category: 'Underwater Wireless Optical Communication' | 'IT Project' | 'AI/Robot';
   title: string;
   titleEn?: string;
   description: string;
