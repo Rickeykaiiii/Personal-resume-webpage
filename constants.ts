@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     title: 'UWOC 複合光學系統專利',
     description: 'A novel underwater wireless optical communication transmitter based on composite optical system, featuring enhanced beam collimation and energy efficiency.',
     date: '2024',
-    imageUrl: '/patent1.png',
+    imageUrl: '/assets/patent1.png',
     color: 'blue',
     url: '/uwoc-patent.html'
   },
@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
     title: '水下無線光信道研究',
     description: 'Comprehensive investigation into signal propagation, turbulence modeling, and channel capacity for underwater optical communication links.',
     date: 'Sep 2023 - Dec 2023',
-    imageUrl: '/UWOC.jpg',
+    imageUrl: '/assets/UWOC.jpg',
     color: 'emerald',
     url: '/uwoc-project.html'
   }
@@ -37,6 +37,6 @@ export const LANGUAGES: Language[] = [
 ];
 
 export const PORTRAIT_URLS = {
-  HOME_HERO: '/photo.png',
-  PROFILE_THUMB: '/photo.png'
+  HOME_HERO: '/assets/photo.png',
+  PROFILE_THUMB: '/assets/photo.png'
 };

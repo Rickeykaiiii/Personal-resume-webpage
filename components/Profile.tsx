@@ -89,7 +89,7 @@ const Profile: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 hover:bg-white/[0.07] transition-colors duration-500">
             <div className="flex gap-4 md:gap-6 items-start">
               <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden border border-white/10">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbvOzKPrNsi4b5A82J3ss8sJU1ePCLFFgANXlr0DC0EhIXBZWTDDFUg94kBdiSC0xFtAv5yAYVQgl8Ez1SAibV9tnN2PeJ9p1d3OYUjlfHp8gc-CNXKb1FbbSdjGDPo_M_eQ-Tuo2XicIx1MfQx92RHJ5fGD98mz_-_FkPTkr-y2PeEjniKZysSNaolS46I4kiAgVP1F5iyICJvZZs1dxGr9gfiVBjUvPfB-KhjctMKKruX4Q67B-Yi2y67H0cooxmiVHP76x1" alt="BUPT" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+                <img src="/assets/bupt-logo.png" alt="BUPT" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
               </div>
               <div>
                 <h3 className="text-lg md:text-xl font-medium text-white mb-1">Beijing University of Posts and Telecommunications</h3>
