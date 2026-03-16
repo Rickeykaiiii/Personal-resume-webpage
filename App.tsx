@@ -133,7 +133,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen w-full bg-black text-white selection:bg-blue-500/30 overflow-hidden">
       {/* 3D 背景 */}
-      <div className={`fixed inset-0 transition-all duration-1000 ease-out ${activeTab !== 'home' ? 'opacity-30 scale-110 blur-md' : 'opacity-100 scale-100 blur-0'}`}>
+      <div className={`fixed inset-0 transition-all duration-1000 ease-out ${activeTab !== 'home' ? 'opacity-30 scale-[3.2] blur-sm translate-y-[100vh]' : 'opacity-100 scale-100 blur-0 translate-y-0'}`}>
         <Home />
       </div>
 

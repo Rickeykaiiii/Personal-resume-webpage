@@ -30,6 +30,16 @@ export const PROJECTS: Project[] = [
     imageUrl: '/assets/images/sanxingdui.png',
     color: 'amber',
     url: '/sanxingdui.html'
+  },
+  {
+    id: '4',
+    category: 'IT Project',
+    title: '小型桌面機器人',
+    description: 'A compact desktop robot project featuring interactive capabilities and intelligent automation.',
+    date: '2024',
+    imageUrl: '/assets/images/robot.png',
+    color: 'purple',
+    url: '/robot.html'
   }
 ];
 

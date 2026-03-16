@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小型桌面機器人</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">IT Project</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Hero Section -->
+            <div class="mb-16 text-center">
+                <span class="text-purple-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">IT Project</span>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">小型桌面機器人</h1>
+                <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    基於 ESP32-C3 的智能桌面探索機器人
+                </p>
+                <p class="text-sm text-white/30 mt-3 font-light serif-text">
+                    Desktop Robot with ESP32-C3 and Motor Control
+                </p>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-12">
+
+                <!-- Project Overview -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專案簡介</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        這是一個簡單而有趣的桌面型小機器人專案，採用 <strong class="text-white">ESP32-C3 微控制器</strong>作為核心控制單元，搭配雙輪驅動系統，實現在桌面上的自由探索與移動。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        機器人具備自主探索模式和手動控制模式，可以在桌面環境中靈活移動，是學習嵌入式系統開發和機器人控制的理想入門專案。
+                    </p>
+                </section>
+
+                <!-- Demo Gallery -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">實際演示</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                            <img src="/assets/gif/robot1.gif" alt="機器人演示 1" class="w-full h-auto">
+                            <div class="p-4">
+                                <p class="text-white/60 text-sm text-center">機器人運行演示</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                            <img src="/assets/gif/robot2.gif" alt="機器人演示 2" class="w-full h-auto">
+                            <div class="p-4">
+                                <p class="text-white/60 text-sm text-center">機器人控制演示</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Core Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">核心功能</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-purple-400 mb-2">自主探索模式</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                機器人可以在桌面上自由移動探索，自動避開桌邊，保持在安全區域內活動。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-purple-400 mb-2">手動控制模式</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                支援遠程控制，可以精確控制機器人的行動方向和速度，實現靈活的移動操作。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-purple-400 mb-2">視覺顯示</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                配備顯示屏，可以顯示機器人當前狀態、模式和基本資訊，提供直觀的互動體驗。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hardware Components -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">硬體組成</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">控制核心</h3>
+                            <p class="text-purple-400 text-xs font-medium mb-1">ESP32-C3 開發板</p>
+                            <p class="text-white/50 text-xs leading-relaxed">低功耗 RISC-V 微控制器，支援 Wi-Fi 和藍牙連接。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">驅動系統</h3>
+                            <p class="text-purple-400 text-xs font-medium mb-1">減速電機 × 2 + 64T 齒輪 × 2</p>
+                            <p class="text-white/50 text-xs leading-relaxed">雙輪差速驅動，提供穩定的動力輸出。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">電源管理</h3>
+                            <p class="text-purple-400 text-xs font-medium mb-1">充電模組 + 電池 + 開關</p>
+                            <p class="text-white/50 text-xs leading-relaxed">可充電設計，支援長時間運行。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">控制與顯示</h3>
+                            <p class="text-purple-400 text-xs font-medium mb-1">電機控制模組 + 顯示屏</p>
+                            <p class="text-white/50 text-xs leading-relaxed">精確的電機控制與即時狀態顯示。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Materials List -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">材料清單</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <ul class="space-y-2 text-white/70 text-sm">
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>減速電機 × 2</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>64T 齒輪 × 2</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>ESP32-C3 開發板</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>電機控制模組</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>充電模組</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>電池</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>顯示屏</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>開關</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="text-purple-400">•</span>
+                                <span>銅線若干</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Project Highlights -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專案特色</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-purple-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">簡單易學：</strong>
+                                適合初學者入門嵌入式系統開發和機器人控制。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-purple-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">成本低廉：</strong>
+                                使用常見的電子元件，總成本控制在合理範圍內。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-purple-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">擴展性強：</strong>
+                                可以輕鬆添加感測器、攝像頭等模組，實現更多功能。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
