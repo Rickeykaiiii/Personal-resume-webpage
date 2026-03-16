@@ -20,6 +20,16 @@ export const PROJECTS: Project[] = [
     imageUrl: '/assets/images/UWOC.jpg',
     color: 'emerald',
     url: '/uwoc-project.html'
+  },
+  {
+    id: '3',
+    category: 'IT Project',
+    title: '三星堆文物線上展示',
+    description: 'An interactive online exhibition platform presenting Sanxingdui archaeological artifacts and cultural heritage through digital media.',
+    date: '2024',
+    imageUrl: '/assets/images/sanxingdui.png',
+    color: 'amber',
+    url: '/sanxingdui.html'
   }
 ];
 

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蜀夢千載：三星堆文物線上 3D 手勢互動展</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">IT Project</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Hero Section -->
+            <div class="mb-16 text-center">
+                <span class="text-amber-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">IT Project</span>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">蜀夢千載</h1>
+                <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    三星堆文物線上 3D 手勢互動展
+                </p>
+                <p class="text-sm text-white/30 mt-3 font-light serif-text">
+                    Shu Dream A Millennium: Interactive 3D Sanxingdui Exhibition with Gesture Control
+                </p>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-12">
+
+                <!-- Project Overview -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專案簡介</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        「蜀夢千載」是一個融合<strong class="text-white">文化遺產</strong>與<strong class="text-white">前沿人機互動技術</strong>的 Web3D 展覽專案。本專案透過高精度的 3D 建模技術還原神秘的古蜀三星堆文物（如青銅大立人、青銅神樹、黃金面具等），並結合先進的電腦視覺技術，讓使用者<strong class="text-white">只需透過手機或電腦的鏡頭揮動雙手</strong>，即可在瀏覽器內零距離、全方位地賞析千年國寶。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        本專案旨在打破實體博物館的地理限制，以最自然、直覺的手勢動作互動，為使用者帶來沉浸式的數位考古體驗。
+                    </p>
+                </section>
+
+                <!-- Core Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">核心功能</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">無接觸手勢操控</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                透過 AI 視覺演算法捕捉手部骨架節點，實現無延遲的凌空互動。無需穿戴任何設備，揮手即可與文物對話。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">高精度 3D 文物還原</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                採用 PBR（Physically Based Rendering）材質技術，完美重現青銅器的鏽跡、黃金的光澤與玉石的溫潤，呈現文物的真實質感。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">零安裝網頁體驗</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                基於 WebGL 構建，支援手機、平板、PC 等多平台，隨點即看，無需下載任何應用程式或外掛程式。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">沉浸式文化解說</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                隨著使用者旋轉文物到特定角度，系統會自動觸發該部位的圖文與語音解說，揭開古蜀文明的神秘面紗。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technology Stack -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術架構</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        本專案採用純前端架構與端側 AI 推理，確保使用者的互動隱私與極致流暢度：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">前端框架</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">React / Vue.js</p>
+                            <p class="text-white/50 text-xs leading-relaxed">處理 UI 介面、展廳導航與狀態管理。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">3D 引擎</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">Three.js (WebGL)</p>
+                            <p class="text-white/50 text-xs leading-relaxed">負責 3D 模型的加載（GLTF/GLB）、光影渲染與場景構建。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">手勢辨識</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">MediaPipe (TensorFlow.js)</p>
+                            <p class="text-white/50 text-xs leading-relaxed">在瀏覽器端即時進行 21 個手部關鍵點（Hand Landmarks）的追蹤與姿態預測。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">模型處理</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">Blender</p>
+                            <p class="text-white/50 text-xs leading-relaxed">3D 模型的前期拓撲最佳化、烘焙與材質貼圖處理。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Interaction Guide -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">互動指南</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        畫面分為四個手勢感應區，不同位置對應不同手勢動作：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[10px] tracking-widest text-white/30 uppercase">左上</span>
+                                <span class="text-xs font-medium text-amber-400 tracking-wider">PALM ROTATE</span>
+                            </div>
+                            <p class="text-white text-sm font-medium mb-1">✋ 單手入鏡，轉動手掌角度</p>
+                            <p class="text-white/50 text-xs leading-relaxed">旋轉文物 Y 軸，全方位觀賞。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[10px] tracking-widest text-white/30 uppercase">右上</span>
+                                <span class="text-xs font-medium text-amber-400 tracking-wider">TWO HANDS SCALE</span>
+                            </div>
+                            <p class="text-white text-sm font-medium mb-1">🤚↔🤚 雙手拉開 / 靠近</p>
+                            <p class="text-white/50 text-xs leading-relaxed">縮放文物模型，放大檢視細節紋理。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[10px] tracking-widest text-white/30 uppercase">左下</span>
+                                <span class="text-xs font-medium text-amber-400 tracking-wider">MODE SWITCH</span>
+                            </div>
+                            <p class="text-white text-sm font-medium mb-1">👌 OK 手勢持續 2 秒</p>
+                            <p class="text-white/50 text-xs leading-relaxed">切換粒子模式與實體材質模式，金色邊框標示當前模式。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-[10px] tracking-widest text-white/30 uppercase">右下</span>
+                                <span class="text-xs font-medium text-amber-400 tracking-wider">AI ANALYSIS</span>
+                            </div>
+                            <p class="text-white text-sm font-medium mb-1">👍 大拇指持續 1.5 秒</p>
+                            <p class="text-white/50 text-xs leading-relaxed">觸發 AI 語音解說，揭開文物背後的古蜀文明故事。</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-amber-500/5 border border-amber-500/20 rounded-xl p-4">
+                        <p class="text-white/50 text-xs leading-relaxed">
+                            <strong class="text-amber-400">注意：</strong>體驗本專案需要開啟瀏覽器的視訊鏡頭權限。所有手勢影像運算皆在本地端完成，不會上傳任何影像資料，請安心使用。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Featured Artifacts -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">重點展品</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">青銅縱目面具</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                體驗古蜀人對「千里眼」與「順風耳」的超自然崇拜。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">青銅神樹</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                探索古代中國宇宙觀與太陽崇拜的具象化體現。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">金面銅人頭像</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                感受青銅與黃金結合的威嚴與神秘。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">玉璋</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                了解古蜀國的祭祀禮儀與玉器加工工藝。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Impact -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專案意義</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">數位典藏活化：</strong>
+                                讓靜態的文物「活」起來，拉近大眾與歷史的距離。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">無障礙教育：</strong>
+                                提供了有別於滑鼠和鍵盤的互動方式，為不同年齡層帶來寓教於樂的歷史學習體驗。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">技術探索：</strong>
+                                展示了 Web 端 AI 結合 3D 渲染在元宇宙與數位展陳領域的巨大潛力。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Future Roadmap -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">未來展望</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
+                        <p>→ 支援 VR/AR 設備（如 Meta Quest / Apple Vision Pro）的沉浸式 WebXR 體驗</p>
+                        <p>→ 引入 AI 語音導覽助手，使用者可直接用語音對文物提出問題</p>
+                        <p>→ 增加多人連線功能，實現「虛擬展廳同遊」</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

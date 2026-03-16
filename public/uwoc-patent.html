@@ -120,11 +120,13 @@
                 <section>
                     <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專利概述</h2>
                     <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        本發明針對水下無線光通信（UWOC）中 LED 陣列光源發散角大及遠場光斑不均勻的問題，提出了一種基於複合光學系統的發射裝置。
+                        本發明針對水下無線光通信（UWOC）中，LED 陣列作為大光學扩展量面光源所固有的大發散角問題，以及傳統成像光學準直方案（如平凸透鏡、非球面透鏡）因受幾何共軛成像原理限制，導致遠場光斑呈現多個分離亮點、光能耦合效率低的技術缺陷，提出了一種基於複合光學系統的水下無線光通信發射裝置及光束整形方法。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        本發明創新性地採用「複合拋物面聚光器（CPC）」與「菲涅爾透鏡（Fresnel Lens）」的二級級聯架構：CPC 依據邊緣光線原理反向作為準直元件，利用全反射機制對 LED 陣列光束進行全角度收集與初次發散角壓縮，並將朗伯型強度分佈整形為蝙蝠翼型分佈；菲涅爾透鏡在此基礎上進行二次折射準直，形成適配水下信道的準平行光束。
                     </p>
                     <p class="text-white/70 leading-relaxed serif-text">
-                        該裝置創新性地採用「複合拋物面聚光器（CPC）」與「菲涅爾透鏡（Fresnel Lens）」的級聯組合。通過 CPC 對 LED
-                        陣列光束進行初次收集與壓縮，再利用菲涅爾透鏡進行二次精確準直，成功解決了傳統單透鏡方案中的「柵格效應」及同軸透鏡組方案體積笨重的缺陷，實現了能量集中、分佈均勻的遠距離水下光傳輸。
+                        該裝置有效解決了 LED 陣列遠場光斑離散（柵格效應）問題，顯著提升遠距離光功率密度、通信鏈路穩定性與有效傳輸距離，為水下無線光通信系統提供了一種輕量化、高效能的發射端解決方案。
                     </p>
                 </section>
 
@@ -134,25 +136,25 @@
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                             <h3 class="text-lg font-medium text-blue-400 mb-2">二級光束整形架構</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                提出 CPC 與菲涅爾透鏡的級聯結構。CPC 作為一級整形壓縮發散角並勻化光斑，菲涅爾透鏡作為二級整形實現高精度準直，解決了單一透鏡無法兼顧準直度與均勻性的矛盾。
+                                提出 CPC + 菲涅爾透鏡的二級級聯結構。CPC 作為一級整形，利用全反射特性將 LED 陣列朗伯型發散角（全視場角約 120°）壓縮至中間收斂角（半角約 27.8°），輸出蝙蝠翼型強度分佈；菲涅爾透鏡作為二級整形，進一步將光束準直至 FWHM 小於 7°，解決了單一光學元件無法兼顧準直度與均勻性的矛盾。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                             <h3 class="text-lg font-medium text-blue-400 mb-2">全角度光能高效收集</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                基於孔徑匹配原理（π/4 L² ≤ πa²），精確設計 CPC 入射孔徑與 LED 陣列尺寸，強制收集包括大角度邊緣光在內的全角度輻射能量，顯著提升軸向光功率密度。
+                                基於孔徑匹配原理（π/4 × L² ≤ π × a²），精確設計 CPC 入射孔徑（直徑 7mm，a = 3.5mm）與 LED 陣列（3×3 排列，對角線長度 L ≤ 7mm）的幾何匹配關係，強制收集包括大角度邊緣光在內的全角度輻射能量，最大化軸向光功率密度。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                             <h3 class="text-lg font-medium text-blue-400 mb-2">非成像勻光消除柵格效應</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                利用非成像光學原理，將 LED 陣列的朗伯型分佈轉換為「蝙蝠翼型」分佈，在傳輸過程中深度混合光線，徹底消除了芯片間隙造成的遠場暗區（柵格效應）。
+                                CPC 採用非成像光學原理，通過多次全反射將各 LED 芯片發出的光線深度混合，打破成像光學共軛成像限制，將朗伯型光強分佈轉換為蝙蝠翼型分佈，使芯片發光均勻交疊，從根本上消除因芯片間隙成像所造成的遠場離散暗區（柵格效應）。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
                             <h3 class="text-lg font-medium text-blue-400 mb-2">輕量化與緊湊設計</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                相比傳統多片實體透鏡堆疊的同軸透鏡組，本方案採用輕量化平板型菲涅爾透鏡與空心/實體 CPC，大幅降低了光學模組的重量與軸向尺寸。
+                                採用光學級 PMMA 材質平板型菲涅爾透鏡（直徑 90mm、焦距 120mm、厚度僅約 2mm）替代傳統多片實體透鏡堆疊；精密鋁合金數控加工的空心反射式 CPC（高度 20.847mm）體積緊湊，二者組合大幅降低了發射光學模組的整體重量與軸向尺寸，適合微型水下載具集成。
                             </p>
                         </div>
                     </div>
@@ -164,19 +166,19 @@
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
                             <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
                                 <span class="text-blue-500">●</span>
-                                極致的光束壓縮
+                                極致的光束壓縮比
                             </h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                仿真顯示光束半高全寬（FWHM）從原始的 142.8° 壓縮至 7.8°，實現高度準直。
+                                LED 原始朗伯型光束全視場角約 120°，經 CPC 一次壓縮後 FWHM 降至約 54.44°（蝙蝠翼型），再由菲涅爾透鏡二次準直後 FWHM 降至約 6.47°（半角約 3.37°），整體壓縮比超過 18:1。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
                             <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
                                 <span class="text-blue-500">●</span>
-                                優異的光斑均勻性
+                                優異的遠場光斑質量
                             </h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                6米處光斑呈現規則近圓形分佈，中心能量集中，無離散柵格暗區，提升動態通信穩定性。
+                                於 8 米遠場處形成直徑約 80mm 的均勻近圓形光斑，能量分佈高度集中，無離散柵格暗區，顯著提升動態對準環境下的通信穩定性。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
@@ -185,7 +187,7 @@
                                 高能量利用率
                             </h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                通過全反射機制減少材料吸收損耗，最大化發射端的能效比，延長水下設備續航。
+                                鋁合金 CPC 內壁經真空電鍍形成鏡面反射層，通過全反射機制收集全角度輻射能量，最大化發射端能效比，有效降低水下設備功耗。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
@@ -194,7 +196,7 @@
                                 高對準容忍度
                             </h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                均勻的光斑分佈降低了對光軸對准精度的苛刻要求，適合水下動態環境。
+                                均勻的遠場光斑分佈降低了對光軸對準精度的苛刻要求，有利於適應水下動態環境中設備移動與姿態擾動，提升系統魯棒性。
                             </p>
                         </div>
                     </div>
@@ -237,15 +239,15 @@
                                 <ul class="space-y-3 text-xs text-white/50">
                                     <li class="flex items-start gap-2">
                                         <span class="text-red-400 text-lg leading-none">×</span>
-                                        <span><strong>單透鏡：</strong>直接成像導致遠場出現「柵格狀」暗區，接收效率低。</span>
+                                        <span><strong>柵格效應：</strong>透鏡將 LED 芯片陣列直接共軛成像於遠場，光斑呈現多個分離亮點，接收端對準時信號劇烈波動。</span>
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <span class="text-red-400 text-lg leading-none">×</span>
-                                        <span><strong>同軸透鏡組：</strong>難以收集邊緣光，光能利用率受限。</span>
+                                        <span><strong>光能利用率低：</strong>受孔徑光闌限制，無法高效收集 LED 邊緣大角度光線，能量耦合效率受限。</span>
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <span class="text-red-400 text-lg leading-none">×</span>
-                                        <span><strong>結構：</strong>多鏡片堆疊導致體積大、重量重，不適合微型潛水器。</span>
+                                        <span><strong>體積笨重：</strong>多鏡片堆疊導致軸向尺寸大、重量重，不適合微型潛水器集成。</span>
                                     </li>
                                 </ul>
                             </div>
@@ -255,15 +257,15 @@
                                 <ul class="space-y-3 text-xs text-white/70">
                                     <li class="flex items-start gap-2">
                                         <span class="text-green-400 text-lg leading-none">✓</span>
-                                        <span><strong>光斑質量：</strong>消除芯片間隙暗區，光斑能量分佈均勻。</span>
+                                        <span><strong>光斑質量：</strong>非成像光學消除芯片間隙成像暗區，8m 處形成直徑約 80mm 的均勻連續圓形光斑。</span>
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <span class="text-green-400 text-lg leading-none">✓</span>
-                                        <span><strong>能量效率：</strong>強制收集全角度輻射，最大化軸向功率密度。</span>
+                                        <span><strong>能量效率：</strong>鏡面反射 CPC 強制收集全角度輻射，軸向光功率密度顯著提升，最大化鏈路信噪比。</span>
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <span class="text-green-400 text-lg leading-none">✓</span>
-                                        <span><strong>結構：</strong>平板透鏡結合空心/實體結構，輕量化且易於封裝。</span>
+                                        <span><strong>結構緊湊：</strong>PMMA 平板菲涅爾透鏡（厚 2mm）+ 精密 CPC（高 20.847mm），輕量化易封裝。</span>
                                     </li>
                                 </ul>
                             </div>
@@ -274,31 +276,31 @@
                 <section>
                     <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">具體實施方式</h2>
                     <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        本發明裝置沿光軸方向從後至前依次封裝於防水殼體內：
+                        本發明裝置各光學組件沿光軸（Z 軸）方向依次同軸封裝於圓筒狀 PVC 支撐壳體內：
                     </p>
                     <div class="space-y-4">
                         <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">1. LED 芯片陣列 (光源)</h3>
+                            <h3 class="text-base font-medium text-white mb-2">1. LED 芯片陣列（光源模組）</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                採用 3x3 排列的高功率 LED 芯片作為信號發射源，提供原始光信號。
+                                選用 Lumileds LUXEON Z Color 系列藍綠光 LED（型號 LXZ1-PB01），封裝尺寸 1.7mm × 1.7mm，以 3×3 矩陣方式緊密貼裝於 PCB 基板，構成矩形發光區域。矩形發光區域對角線長度 L 滿足幾何約束條件 π/4 × L² ≤ π × a²，確保全部發射光能被 CPC 完整接收，避免能量溢出。
                             </p>
                         </div>
                         <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">2. 複合拋物面聚光器 (CPC)</h3>
+                            <h3 class="text-base font-medium text-white mb-2">2. 複合拋物面聚光器（CPC）</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                入射端緊貼 LED 陣列。利用邊緣光線原理，將光束發散角壓縮至 ±27.8°，並將光強分佈整形為邊緣增強的「蝙蝠翼型」，填補陣列間隙。
+                                採用精密數控加工的鋁合金空心反射式結構，入射孔徑直徑 7mm（a = 3.5mm），出射孔徑直徑 15mm（b = 7.5mm），軸向高度 20.847mm，理論設計半接收角 θ_max = 27.818°。內壁經真空電鍍工藝形成鏡面反射層，將 LED 大角度朗伯型光束通過多次全反射壓縮至中間收斂角，輸出 FWHM 約 54.44° 的蝙蝠翼型強度分佈。
                             </p>
                         </div>
                         <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">3. 菲涅爾透鏡 (二級準直)</h3>
+                            <h3 class="text-base font-medium text-white mb-2">3. 菲涅爾透鏡（二級準直）</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                設置於 CPC 出射端前方焦距處。作為輕量化準直元件，將預整形後的擴展光束進一步壓縮，使出射光束趨近於平行光，實現遠距離傳輸。
+                                採用光學級 PMMA 材質平板型菲涅爾透鏡，直徑 90mm，焦距 120mm，厚度約 2mm，設置於距 LED 發光面 135mm 處。其同心環帶結構對 CPC 輸出的中間態光束進行二次折射準直，最終出射光束 FWHM 降至約 6.47°（半角約 3.37°），於 8m 遠場處形成直徑約 80mm 的均勻圓形光斑。
                             </p>
                         </div>
                         <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">4. 防水與定位結構</h3>
+                            <h3 class="text-base font-medium text-white mb-2">4. 防水壳體與定位結構</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                包含防水殼體、支撐環與止動環。通過過盈配合與光學級防水膠，確保光學組件同軸度及水下密封性能。
+                                各光學組件沿光軸同軸封裝於圓筒狀 PVC 支撐壳體內。菲涅爾透鏡固定於壳體前端，接縫通過環氧樹脂防水粘接工藝密封固化，前端設置高透光率觀察窗並配合密封圈進行水密性處理，確保系統在水下高壓環境中穩定工作。
                             </p>
                         </div>
                     </div>
