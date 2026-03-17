@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw部署及操控Jetson Nano</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">IT Project</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Hero Section -->
+            <div class="mb-16 text-center">
+                <span class="text-red-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">IT Project</span>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">OpenClaw + YOLO on Jetson Nano</h1>
+                <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    在 Jetson Nano 上部署 OpenClaw 調用攝像頭運行 YOLO 物體檢測
+                </p>
+                <p class="text-sm text-white/30 mt-3 font-light serif-text">
+                    Deploying OpenClaw with Camera and YOLO Object Detection on Jetson Nano
+                </p>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-12">
+
+                <!-- Project Overview -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目簡介</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        這個項目在 NVIDIA Jetson Nano 開發板上部署 OpenClaw 框架，調用攝像頭並運行 YOLO 物體檢測模型。Jetson Nano 是一款小型但功能強大的 AI 計算平台，配備 128-core Maxwell GPU，非常適合邊緣 AI 視覺應用。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        通過 OpenClaw 框架整合攝像頭輸入和 YOLO 深度學習模型，實現實時物體檢測和識別。整個推理過程在本地完成，無需依賴雲端服務，適合對延遲敏感的應用場景。
+                    </p>
+                </section>
+
+                <!-- Hardware Setup -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">硬件平台</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                        <img src="/assets/images/Jetson-Nano.png" alt="Jetson Nano 開發板" class="w-full">
+                        <div class="p-4">
+                            <p class="text-white/60 text-sm text-center">NVIDIA Jetson Nano 開發板</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">主要功能</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-red-400 mb-2">攝像頭調用與圖像採集</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                通過 OpenClaw 框架調用 CSI 或 USB 攝像頭，實現實時視頻流採集和預處理。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-red-400 mb-2">YOLO 物體檢測</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                部署 YOLOv5/YOLOv8 模型，利用 Jetson Nano 的 GPU 加速進行實時物體檢測和分類。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-red-400 mb-2">邊緣 AI 推理</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                所有推理計算在本地完成，無需雲端連接，適合對延遲和隱私敏感的應用場景。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-red-400 mb-2">實時可視化輸出</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                在視頻流上疊加檢測框和標籤，實時顯示識別結果和置信度。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detection Results -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">檢測結果展示</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                        <img src="/assets/images/yolo-clock.png" alt="YOLO 物體檢測結果" class="w-full">
+                        <div class="p-4">
+                            <p class="text-white/60 text-sm text-center">YOLO 實時物體檢測結果示例</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technology Stack -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術實現</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        項目基於嵌入式 AI 平台和深度學習技術棧構建：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">硬件平台</h3>
+                            <p class="text-red-400 text-xs font-medium mb-1">NVIDIA Jetson Nano</p>
+                            <p class="text-white/50 text-xs leading-relaxed">128-core Maxwell GPU，4GB LPDDR4 內存，支持 CUDA 加速計算。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">深度學習框架</h3>
+                            <p class="text-red-400 text-xs font-medium mb-1">YOLO (YOLOv5/v8)</p>
+                            <p class="text-white/50 text-xs leading-relaxed">實時物體檢測模型，支持 TensorRT 加速推理。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">視覺框架</h3>
+                            <p class="text-red-400 text-xs font-medium mb-1">OpenClaw + OpenCV</p>
+                            <p class="text-white/50 text-xs leading-relaxed">攝像頭調用和圖像處理框架，支持 CSI 和 USB 攝像頭。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">編程語言</h3>
+                            <p class="text-red-400 text-xs font-medium mb-1">Python</p>
+                            <p class="text-white/50 text-xs leading-relaxed">使用 Python 進行模型部署、攝像頭調用和結果可視化。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Control Interface -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">OpenClaw 控制界面</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                        <img src="/assets/images/openClaw-control.png" alt="OpenClaw 控制 Jetson Nano 聊天記錄" class="w-full">
+                        <div class="p-4">
+                            <p class="text-white/60 text-sm text-center">OpenClaw 控制 Jetson Nano 的交互記錄</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Use Cases -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">應用場景</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">智能監控</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                實時檢測和識別監控畫面中的人員、車輛等目標，用於安防和交通監控。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">物體識別與分類</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                識別和分類不同類型的物體，用於工業質檢、零售分析等場景。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">教育與研究</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                作為邊緣 AI 教學平台，學習深度學習模型部署和優化技術。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">原型開發</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                快速驗證視覺 AI 方案，測試不同模型在邊緣設備上的性能表現。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Highlights -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術亮點</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">GPU 加速推理：</strong>
+                                利用 Jetson Nano 的 CUDA 核心和 TensorRT 優化，實現高效的 YOLO 模型推理，達到實時檢測性能。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">邊緣 AI 部署：</strong>
+                                所有計算在本地完成，無需雲端連接，降低延遲並保護數據隱私。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">低功耗高性能：</strong>
+                                Jetson Nano 功耗僅 5-10W，適合長時間運行和移動應用場景。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目特點</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
+                        <p>→ 完整的邊緣 AI 視覺方案，從攝像頭調用到模型推理</p>
+                        <p>→ 支持多種 YOLO 版本（YOLOv5、YOLOv8）和自定義模型</p>
+                        <p>→ TensorRT 加速優化，提升推理速度和降低延遲</p>
+                        <p>→ 模塊化設計，易於擴展其他視覺 AI 功能</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

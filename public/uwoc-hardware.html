@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水下無線光通信硬件</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">Hardware Design</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Hero Section -->
+            <div class="mb-16 text-center">
+                <span class="text-teal-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">Underwater Wireless Optical Communication</span>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">水下無線光通信硬件</h1>
+                <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    自主設計的水下無線光通信電路系統
+                </p>
+                <p class="text-sm text-white/30 mt-3 font-light serif-text">
+                    Self-designed Hardware System for Underwater Wireless Optical Communication
+                </p>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-12">
+
+                <!-- Project Overview -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目簡介</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        這個項目是我在實驗室期間自主設計和搭建的水下無線光通信硬件系統。整個系統實現了從視頻採集、光信號發射、水下傳輸到接收顯示的完整鏈路。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        為了方便後續的學弟學妹使用這套系統，我編寫了一份詳細的《LED 平台使用方法及注意事項》文檔，記錄了每個硬件模塊的連接方式、工作原理和常見問題排查方法。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        系統包含發射端和接收端兩部分，發射端將攝像頭採集的視頻信號轉換為光信號發射，接收端通過 PIN 陣列接收光信號並還原為視頻顯示。
+                    </p>
+                </section>
+
+                <!-- System Architecture -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">系統架構</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        整個通信系統由發射端和接收端兩條鏈路組成：
+                    </p>
+
+                    <div class="space-y-4">
+                        <!-- Transmitter Chain -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-teal-400 mb-3">發射端鏈路</h3>
+                            <div class="flex items-center gap-3 text-white/60 text-sm flex-wrap">
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">攝像頭</span>
+                                <span>→</span>
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">FPGA 發射端</span>
+                                <span>→</span>
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">信號放大模塊</span>
+                                <span>→</span>
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">功率放大模塊</span>
+                                <span>→</span>
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">LED 發射端</span>
+                            </div>
+                        </div>
+
+                        <!-- Receiver Chain -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-teal-400 mb-3">接收端鏈路</h3>
+                            <div class="flex items-center gap-3 text-white/60 text-sm flex-wrap">
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">PIN 陣列接收端</span>
+                                <span>→</span>
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">FPGA 接收端</span>
+                                <span>→</span>
+                                <span class="bg-teal-500/20 px-3 py-1 rounded">HDMI 顯示屏</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Demo -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">系統演示</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                        <video controls class="w-full" preload="metadata" playsinline>
+                            <source src="/assets/Video/video-transfer.MOV" type="video/mp4">
+                            您的瀏覽器不支持視頻播放
+                        </video>
+                        <div class="p-4">
+                            <p class="text-white/60 text-sm text-center">水下無線光通信視頻傳輸演示</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hardware Modules -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">硬件模塊</h2>
+                    <div class="space-y-6">
+                        <!-- Signal Amplifier Module -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-6 p-6">
+                                <div>
+                                    <h3 class="text-lg font-medium text-teal-400 mb-3">信號放大模塊</h3>
+                                    <p class="text-white/60 text-sm leading-relaxed">
+                                        將 FPGA 輸出的 0-2.5V 電平抬高，為後續電路提供足夠的驅動能力。需要 ±5V 雙電源供電，正常工作時芯片溫度微溫。
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/images/Signal-Amplifier-Module.png" alt="信號放大模塊" class="rounded-lg max-h-48 object-contain">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Power Amplifier Module -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-6 p-6">
+                                <div>
+                                    <h3 class="text-lg font-medium text-teal-400 mb-3">功率放大模塊</h3>
+                                    <p class="text-white/60 text-sm leading-relaxed">
+                                        進行方波整形和功率放大，將 3.3V 信號抬高到接近電源電壓，直接驅動 LED 發光。芯片工作時溫度較高，需注意散熱。
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/images/Power-Amplifier-Module.png" alt="功率放大模塊" class="rounded-lg max-h-48 object-contain">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LED Array -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-6 p-6">
+                                <div>
+                                    <h3 class="text-lg font-medium text-teal-400 mb-3">LED 陣列發射端</h3>
+                                    <p class="text-white/60 text-sm leading-relaxed">
+                                        實驗室有兩種型號：大重量型（9-12V 供電，可短距離傳輸）和小重量型（7-8V 供電，長距離傳輸）。LED 發光穩定，無頻閃。
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/images/LED-Array.png" alt="LED陣列" class="rounded-lg max-h-48 object-contain">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TIA-PD Circuit -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-6 p-6">
+                                <div>
+                                    <h3 class="text-lg font-medium text-teal-400 mb-3">TIA 光電二極管電路</h3>
+                                    <p class="text-white/60 text-sm leading-relaxed">
+                                        跨阻放大器（TIA）電路負責將 PIN 光電二極管接收到的微弱光電流轉換為電壓信號。採用高增益、低噪聲設計，確保信號的靈敏度和信噪比。
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/images/TIA-PD-Circuit.png" alt="TIA光電二極管電路" class="rounded-lg max-h-48 object-contain">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Receiver Amplifier -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-6 p-6">
+                                <div>
+                                    <h3 class="text-lg font-medium text-teal-400 mb-3">接收端後級放大電路</h3>
+                                    <p class="text-white/60 text-sm leading-relaxed">
+                                        對 TIA 輸出的電壓信號進行進一步放大和整形，提升信號幅度至 FPGA 可識別的電平範圍，同時進行濾波處理以降低噪聲干擾。
+                                    </p>
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <img src="/assets/images/Receiver-Amplifier.png" alt="接收端後級放大電路" class="rounded-lg max-h-48 object-contain">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other Modules -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-teal-400 mb-2">FPGA 發射端黑盒</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                將攝像頭的 HDMI 視頻信號轉換為電平信號。通過 SMA 連接線輸出到後續放大電路。正常工作時會有綠光紅光指示，風扇運轉。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-teal-400 mb-2">FPGA 接收端黑盒</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                接收來自後級放大電路的信號，進行解碼處理後通過 HDMI 輸出到顯示屏。與發射端配合完成完整的視頻傳輸鏈路。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Details -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術細節</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">信號處理</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                FPGA 負責視頻信號的編解碼和電平轉換，實現高速數據傳輸。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">多級放大</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                通過信號放大和功率放大兩級電路，確保 LED 有足夠的驅動電流。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">電源設計</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                不同模塊需要不同電源配置（±5V、單電源），需要仔細連接避免反接。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">連接方式</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                模塊間使用 SMA 連接線傳輸射頻信號，確保信號完整性。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">設計特點</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-teal-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">模塊化設計：</strong>
+                                各個功能模塊獨立，便於調試和維護。每個模塊都有明確的輸入輸出接口。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-teal-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">完整文檔：</strong>
+                                編寫了詳細的使用文檔，包含每個模塊的連接方法、注意事項和故障排查，方便後續使用者快速上手。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-teal-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">實用性強：</strong>
+                                系統經過實際測試驗證，可以穩定實現視頻信號的光傳輸，為水下通信實驗提供硬件支持。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Documentation -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">使用文檔</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <h3 class="text-base font-medium text-white mb-3">LED 平台使用方法及注意事項</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-4">
+                            為實驗室後續使用者編寫了完整的技術文檔，詳細記錄了：
+                        </p>
+                        <ul class="space-y-2 text-white/50 text-sm">
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 mt-1">•</span>
+                                <span>每個硬件模塊的功能和工作原理</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 mt-1">•</span>
+                                <span>詳細的連接步驟和接線圖</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 mt-1">•</span>
+                                <span>電源配置和電壓要求</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 mt-1">•</span>
+                                <span>常見問題和故障排查方法</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-teal-400 mt-1">•</span>
+                                <span>安全注意事項和操作規範</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Applications -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">應用場景</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">水下視頻傳輸</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                實現水下環境中的實時視頻傳輸，用於水下探測和監控。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">通信實驗平台</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                作為實驗室的研究平台，驗證水下光通信理論和算法。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">教學演示</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                用於光通信原理的教學演示，直觀展示光信號傳輸過程。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">系統集成測試</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                測試不同光學系統和調制方案的性能表現。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目收穫</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
+                        <p>→ 完成了從系統設計、電路搭建到調試驗證的完整流程</p>
+                        <p>→ 掌握了 FPGA、信號放大、功率驅動等電路設計技能</p>
+                        <p>→ 學會了編寫技術文檔，將知識傳承給後續使用者</p>
+                        <p>→ 培養了系統性思維和問題排查能力</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

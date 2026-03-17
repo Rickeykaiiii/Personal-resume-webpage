@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡歷生成器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">IT Project</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Hero Section -->
+            <div class="mb-16 text-center">
+                <span class="text-indigo-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">IT Project</span>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">簡歷生成器</h1>
+                <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    基於 JSON 格式的在線簡歷生成工具
+                </p>
+                <p class="text-sm text-white/30 mt-3 font-light serif-text">
+                    JSON-based Online Resume Builder with Real-time Preview
+                </p>
+                <div class="mt-8">
+                    <a href="https://rickeykaiiii.github.io/resume_generate/" target="_blank"
+                        class="inline-block px-8 py-3 bg-indigo-500 hover:bg-indigo-600 text-white font-medium rounded-full text-sm tracking-wider transition-all duration-300 shadow-lg hover:shadow-indigo-500/50">
+                        🎯 體驗線上演示
+                    </a>
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-12">
+
+                <!-- Project Overview -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目簡介</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        這是一個基於 React 的在線簡歷生成工具，部署在 GitHub Pages 上。採用「左側編輯、右側實時預覽」的設計，讓用戶可以即時看到簡歷的最終效果。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        支持基本信息、教育背景、實習經歷、項目經驗、技能和語言等完整的簡歷模塊。用戶可以自由切換模塊顯示、強制分頁，還支持 HTML 格式編輯，靈活度很高。
+                    </p>
+                </section>
+
+                <!-- Core Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">核心功能</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-indigo-400 mb-2">實時預覽編輯</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                左側編輯器修改內容，右側立即顯示最終效果，所見即所得的編輯體驗。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-indigo-400 mb-2">JSON 數據管理</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                支持導入/導出 JSON 格式數據，方便保存和遷移簡歷內容，數據存儲在瀏覽器本地。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-indigo-400 mb-2">頭像管理</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                支持本地上傳頭像或使用 URL 鏈接，靈活管理個人照片。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-indigo-400 mb-2">PDF 導出</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                使用瀏覽器原生打印功能導出 PDF，無需額外依賴，支持 A4 頁面佈局控制。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-indigo-400 mb-2">二維碼生成</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                自動生成個人網站二維碼，方便在簡歷上展示在線作品集。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technology Stack -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術實現</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        項目採用現代前端技術棧，純前端實現，無需後端服務：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">前端框架</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-1">React 19.2.0</p>
+                            <p class="text-white/50 text-xs leading-relaxed">使用最新版本 React，配合 Vite 構建工具實現快速開發。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">樣式方案</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-1">Tailwind CSS v4.1.18</p>
+                            <p class="text-white/50 text-xs leading-relaxed">使用 Tailwind CSS 實現響應式設計，配合 PostCSS 和 Autoprefixer。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">圖標庫</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-1">Lucide React</p>
+                            <p class="text-white/50 text-xs leading-relaxed">使用 Lucide 圖標庫提供清晰美觀的界面圖標。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">字體</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-1">Noto Sans SC</p>
+                            <p class="text-white/50 text-xs leading-relaxed">通過 Google Fonts 引入思源黑體，支持中文顯示。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Architecture -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">架構設計</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-indigo-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">單文件架構：</strong>
+                                核心邏輯集中在 App.jsx 文件中，代碼結構清晰，易於維護和理解。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-indigo-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">純前端應用：</strong>
+                                所有數據存儲在瀏覽器本地，無需後端服務器，部署簡單，隱私安全。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-indigo-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">響應式設計：</strong>
+                                針對現代瀏覽器（Chrome、Firefox、Safari）優化，支持不同屏幕尺寸。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">使用體驗</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">模塊化編輯</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                可以自由切換各個簡歷模塊的顯示狀態，根據需要定制簡歷內容。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">強制分頁</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                支持在特定位置強制分頁，精確控制 A4 頁面佈局。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">HTML 編輯</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                支持 HTML 格式編輯，可以添加鏈接、加粗等富文本效果。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">A4 頁面輔助線</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                提供 A4 頁面輔助線，幫助用戶更好地控制內容佈局。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Deployment -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">部署方式</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <p class="text-white/70 leading-relaxed serif-text mb-3">
+                            項目部署在 GitHub Pages 上，訪問地址：
+                        </p>
+                        <a href="https://rickeykaiiii.github.io/resume_generate/" target="_blank"
+                            class="text-indigo-400 hover:text-indigo-300 text-sm break-all">
+                            https://rickeykaiiii.github.io/resume_generate/
+                        </a>
+                        <p class="text-white/60 text-sm mt-3">
+                            使用 GitHub Actions 自動化工作流進行持續部署，代碼推送後自動更新線上版本。
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Project Features -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目特點</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
+                        <p>→ 零後端依賴，純前端實現，部署簡單</p>
+                        <p>→ 實時預覽編輯，所見即所得的用戶體驗</p>
+                        <p>→ JSON 數據格式，方便保存和遷移</p>
+                        <p>→ 瀏覽器原生 PDF 導出，無需額外工具</p>
+                        <p>→ 響應式設計，支持多種屏幕尺寸</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

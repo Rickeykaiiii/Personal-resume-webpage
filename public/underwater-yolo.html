@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水下YOLO檢測海洋垃圾</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">IT Project</span>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="mb-16 text-center">
+                <span class="text-sky-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">IT Project</span>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">水下YOLO檢測海洋垃圾</h1>
+                <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    基於 TensorFlow Lite 的水下垃圾檢測與清理視覺系統
+                </p>
+                <p class="text-sm text-white/30 mt-3 font-light serif-text">
+                    Underwater Marine Debris Detection and Cleaning Vision System
+                </p>
+            </div>
+
+            <div class="space-y-12">
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目簡介</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        這個項目聚焦於水下海洋垃圾的視覺檢測與後續清理流程，目標是在複雜水下環境中識別常見塑料垃圾，為自主水下機器人提供感知能力。系統以輕量化推理為核心，採用 TensorFlow Lite 模型完成目標檢測，再將檢測結果作為後續距離估計與機械臂抓取的輸入。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        模型基於約 1500 張圖像進行訓練，現階段可識別吸管、瓶子、罐子、袋子和杯子 5 類垃圾，在專案 README 記錄中整體準確率約為 80%。相較於完整尺寸模型，TFLite 更適合部署在資源受限的邊緣設備或機器人平台上。
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">系統流程</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-sky-400 mb-2">1. 水下垃圾目標檢測</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                使用 TensorFlow Lite 檢測模型對圖片或視頻幀進行推理，輸出垃圾類別、邊界框位置與置信度，完成塑料垃圾的初步定位。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-sky-400 mb-2">2. 距離估計</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                結合 OpenCV 與三角測量方法估算目標距離，讓系統不只知道垃圾在哪裡，也能提供抓取和接近所需的空間信息。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <h3 class="text-lg font-medium text-sky-400 mb-2">3. 機械臂清理與收納</h3>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                在完整設計中，檢測到的垃圾會由機械臂執行收集，並進一步壓縮後存入網袋，形成從感知到清理的閉環構想。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">檢測結果展示</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        下方展示了 3 組水下垃圾檢測前後對比圖。左側為原始輸入畫面，右側為模型輸出的檢測結果，可直觀看到目標框與類別標註效果。
+                    </p>
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                                <img src="/assets/images/image1.png" alt="水下垃圾檢測前圖像 1" class="w-full">
+                                <div class="p-4">
+                                    <p class="text-white/60 text-sm text-center">檢測前圖像 01</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                                <img src="/assets/images/detected_image1.png" alt="水下垃圾檢測後圖像 1" class="w-full">
+                                <div class="p-4">
+                                    <p class="text-white/60 text-sm text-center">檢測後圖像 01</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                                <img src="/assets/images/image3.png" alt="水下垃圾檢測前圖像 2" class="w-full">
+                                <div class="p-4">
+                                    <p class="text-white/60 text-sm text-center">檢測前圖像 02</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                                <img src="/assets/images/detected_image3.png" alt="水下垃圾檢測後圖像 2" class="w-full">
+                                <div class="p-4">
+                                    <p class="text-white/60 text-sm text-center">檢測後圖像 02</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                                <img src="/assets/images/image4.png" alt="水下垃圾檢測前圖像 3" class="w-full">
+                                <div class="p-4">
+                                    <p class="text-white/60 text-sm text-center">檢測前圖像 03</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                                <img src="/assets/images/detected_image4.png" alt="水下垃圾檢測後圖像 3" class="w-full">
+                                <div class="p-4">
+                                    <p class="text-white/60 text-sm text-center">檢測後圖像 03</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術實現</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        項目以 Python 為主體，結合輕量級深度學習與傳統視覺算法，兼顧檢測效果與部署可行性：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">核心語言</h3>
+                            <p class="text-sky-400 text-xs font-medium mb-1">Python 3.9+</p>
+                            <p class="text-white/50 text-xs leading-relaxed">負責模型調用、圖像處理、腳本編排與整體流程控制。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">推理引擎</h3>
+                            <p class="text-sky-400 text-xs font-medium mb-1">TensorFlow Lite</p>
+                            <p class="text-white/50 text-xs leading-relaxed">採用輕量模型進行垃圾分類與檢測，適合邊緣側部署與快速推理。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">視覺處理</h3>
+                            <p class="text-sky-400 text-xs font-medium mb-1">OpenCV 4.8.1</p>
+                            <p class="text-white/50 text-xs leading-relaxed">處理圖像輸入、檢測結果繪製，以及立體視覺距離估計等任務。</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">數值計算</h3>
+                            <p class="text-sky-400 text-xs font-medium mb-1">NumPy 1.26.4</p>
+                            <p class="text-white/50 text-xs leading-relaxed">支撐圖像矩陣運算、數據預處理和模型輸入輸出轉換。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">可識別垃圾類別</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                            <p class="text-sky-400 text-sm font-medium">吸管</p>
+                            <p class="text-white/40 text-xs mt-1">Straws</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                            <p class="text-sky-400 text-sm font-medium">瓶子</p>
+                            <p class="text-white/40 text-xs mt-1">Bottles</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                            <p class="text-sky-400 text-sm font-medium">罐子</p>
+                            <p class="text-white/40 text-xs mt-1">Cans</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                            <p class="text-sky-400 text-sm font-medium">袋子</p>
+                            <p class="text-white/40 text-xs mt-1">Bags</p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
+                            <p class="text-sky-400 text-sm font-medium">杯子</p>
+                            <p class="text-white/40 text-xs mt-1">Cups</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目結構與使用方式</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                        <p class="text-white/70 leading-relaxed serif-text mb-4">
+                            專案結構分為檢測模組、距離計算模組、TFLite 模型文件、圖片輸入與輸出結果資料夾。實際使用時，可將待測圖片放入指定資料夾，再透過批次腳本或手動命令執行檢測。
+                        </p>
+                        <div class="space-y-3 text-sm text-white/60">
+                            <p>→ `Detection/`：圖片與視頻檢測腳本</p>
+                            <p>→ `Distance Calculation/`：立體視覺距離計算</p>
+                            <p>→ `Tflite Model/`：模型與標籤文件</p>
+                            <p>→ `my_images/`：輸入圖片資料夾</p>
+                            <p>→ `output/`：檢測後輸出結果</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術亮點</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-sky-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">輕量化部署：</strong>
+                                選用 TensorFlow Lite 作為推理引擎，降低模型部署成本，更適合嵌入式或水下機器人平台。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-sky-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">檢測與測距結合：</strong>
+                                不僅辨識垃圾類別，同時保留接入距離估計模組的能力，讓後續抓取控制更可行。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-sky-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">面向清理任務設計：</strong>
+                                項目不是單純的視覺識別 Demo，而是面向「發現垃圾、接近垃圾、抓取垃圾」完整任務鏈設計。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">後續優化方向</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
+                        <p>→ 進一步做數據增強與重新訓練，提升水下低對比場景的穩定性</p>
+                        <p>→ 擴展更多垃圾類別，提高模型泛化能力</p>
+                        <p>→ 優化準確率與推理速度，提升實際部署表現</p>
+                        <p>→ 從圖片檢測延伸到實時視頻流檢測</p>
+                        <p>→ 將檢測結果更完整地接入機械臂控制與清理流程</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="mt-16 text-center">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

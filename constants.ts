@@ -60,6 +60,46 @@ export const PROJECTS: Project[] = [
     imageUrl: '/assets/images/Isaac_image.png',
     color: 'green',
     url: '/isaac-lab.html'
+  },
+  {
+    id: '7',
+    category: 'IT Project',
+    title: '使用OpenClaw部署及操控Jetson Nano',
+    description: '在 Jetson Nano 上部署 OpenClaw 調用攝像頭運行 YOLO 物體檢測模型。',
+    date: '2026',
+    imageUrl: '/assets/images/openclaw-jetson.png',
+    color: 'red',
+    url: '/openclaw-jetson.html'
+  },
+  {
+    id: '8',
+    category: 'IT Project',
+    title: '簡歷生成器',
+    description: '基於 JSON 格式的在線簡歷生成工具，支持實時預覽和 PDF 導出。',
+    date: '2024',
+    imageUrl: '/assets/images/Resume-Page.png',
+    color: 'indigo',
+    url: '/resume-generator.html'
+  },
+  {
+    id: '9',
+    category: 'Underwater Wireless Optical Communication',
+    title: '水下無線光通信硬件',
+    description: '自主設計的水下無線光通信電路系統，包含發射端和接收端硬件實現。',
+    date: '2024',
+    imageUrl: '/assets/images/Receiver-Amplifier.png',
+    color: 'teal',
+    url: '/uwoc-hardware.html'
+  },
+  {
+    id: '10',
+    category: 'IT Project',
+    title: '水下YOLO檢測海洋垃圾',
+    description: '基於 TensorFlow Lite 和計算機視覺的水下垃圾檢測系統，可識別 5 類海洋塑料垃圾。',
+    date: '2024',
+    imageUrl: '/assets/images/detected_image1.png',
+    color: 'sky',
+    url: '/underwater-yolo.html'
   }
 ];
 
