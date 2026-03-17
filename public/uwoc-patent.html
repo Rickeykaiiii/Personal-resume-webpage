@@ -1,19 +1,52 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UWOC 專利 - 基於複合光學系統的發射裝置</title>
+    <title>UWOC 專利項目</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        :root {
+            --bg: #07111d;
+            --panel: rgba(10, 22, 36, 0.72);
+            --line: rgba(255, 255, 255, 0.1);
+            --text: rgba(244, 247, 251, 0.96);
+            --muted: rgba(220, 228, 236, 0.7);
+            --soft: rgba(220, 228, 236, 0.48);
+            --accent: #61d3ff;
+            --accent-2: #8fffe0;
         }
 
-        .serif-text {
-            font-family: Georgia, 'Times New Roman', serif;
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            font-family: "Noto Sans TC", sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(97, 211, 255, 0.18), transparent 28%),
+                radial-gradient(circle at 85% 12%, rgba(143, 255, 224, 0.14), transparent 20%),
+                linear-gradient(180deg, #08101a 0%, #07111d 52%, #050b12 100%);
+        }
+
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: "Manrope", "Noto Sans TC", sans-serif;
+        }
+
+        .glass {
+            background: var(--panel);
+            backdrop-filter: blur(18px);
+            border: 1px solid var(--line);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
         }
 
         .main-image {
@@ -25,291 +58,260 @@
             height: 100%;
             object-fit: contain;
         }
+
         .main-image.active {
             opacity: 1;
         }
+
         .thumbnail {
-            opacity: 0.4;
-            transition: opacity 0.2s ease, border-color 0.2s ease;
-            border: 2px solid transparent;
+            opacity: 0.42;
+            transition: opacity 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            border: 1px solid transparent;
             cursor: pointer;
         }
+
         .thumbnail.active {
             opacity: 1;
-            border-color: #3b82f6;
+            border-color: rgba(97, 211, 255, 0.9);
+            transform: translateY(-2px);
         }
+
         .thumbnail:hover:not(.active) {
             opacity: 0.75;
-            border-color: rgba(255,255,255,0.2);
+            border-color: rgba(255, 255, 255, 0.2);
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 
-<body class="bg-black text-white min-h-screen">
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+<body class="min-h-screen">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#07111d]/80 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+            <a href="/" class="text-xs font-medium tracking-[0.22em] text-white/65 transition-colors hover:text-white">
                 ← BACK TO PORTFOLIO
             </a>
-            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">Invention Patent</span>
+            <span class="text-[10px] uppercase tracking-[0.32em] text-white/35">Patent Project</span>
         </div>
     </header>
 
-    <main class="pt-32 pb-20 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="mb-16 text-center">
-                <span class="text-blue-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">Patent
-                    Innovation</span>
-                <h1 class="text-3xl md:text-5xl font-light text-white mb-6 tracking-tight leading-tight">
-                    一種基於複合光學系統的<br class="hidden md:block">水下無線光通信發射裝置及方法
-                </h1>
-                <p class="text-base md:text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
-                    Underwater Wireless Optical Communication Transmitter Based on Composite Optical System
-                </p>
-                <p class="text-sm text-white/40 mt-4 tracking-wider">
-                    申請單位：北京郵電大學 | 發明人：洪葦楷 HONG WAI KAI
-                </p>
-            </div>
-
-            <div class="mb-16">
-                <!-- 主圖預覽 -->
-                <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/50 relative mb-3">
-                    <div class="aspect-video relative">
-                        <img src="/assets/images/patent1.png" alt="發射裝置整體結構圖" class="main-image active">
-                        <img src="/assets/images/patent2.png" alt="LED芯片陣列與CPC裝配圖" class="main-image">
-                        <img src="/assets/images/patent3.png" alt="菲涅爾透鏡結構示意圖" class="main-image">
-                        <img src="/assets/images/patent4.png" alt="光強分佈對比圖" class="main-image">
-                        <img src="/assets/images/patent5.png" alt="整形後出射光束角強度分佈" class="main-image">
-                        <img src="/assets/images/patent6.png" alt="整體光線追跡仿真圖" class="main-image">
-                        <img src="/assets/images/patent7.png" alt="6米處光斑照度分佈" class="main-image">
+    <main class="px-6 pb-24 pt-28">
+        <div class="mx-auto max-w-6xl">
+            <section class="mb-10 grid gap-6 lg:grid-cols-[1.25fr_0.75fr]">
+                <div class="glass rounded-[30px] p-8 md:p-12">
+                    <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8fffe0]">
+                        Underwater Wireless Optical Communication
                     </div>
-                    <div class="absolute top-4 right-4 bg-black/60 px-3 py-1 rounded-full text-xs text-white/60">
-                        <span id="currentSlide">1</span> / 7
+                    <h1 class="display mb-5 text-4xl font-extrabold leading-tight md:text-6xl">
+                        水下無線光通信
+                        <br>
+                        發射端專利
+                    </h1>
+                    <p class="max-w-3xl text-base leading-8 text-[color:var(--muted)] md:text-lg">
+                        這個項目主要在做水下無線光通信的發射端。LED 本身發散角大，距離一拉長，光能會分得很開，接收端也更難穩定收到訊號。我把
+                        <strong class="text-white">複合拋物面聚光器（CPC）</strong>
+                        和
+                        <strong class="text-white">菲涅爾透鏡</strong>
+                        放在同一個發射結構裡，先收光，再做二次準直，讓輸出的光束更集中一些。
+                    </p>
+                </div>
+
+                <div class="glass rounded-[30px] p-8">
+                    <p class="mb-6 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/45">Project Snapshot</p>
+                    <div class="space-y-5 text-sm text-[color:var(--muted)]">
+                        <div>
+                            <p class="mb-1 text-white">項目名稱</p>
+                            <p>一種基於複合光學系統的水下無線光通信發射裝置及方法</p>
+                        </div>
+                        <div>
+                            <p class="mb-1 text-white">角色</p>
+                            <p>發明人之一 / 參與光學結構設計</p>
+                        </div>
+                        <div>
+                            <p class="mb-1 text-white">重點價值</p>
+                            <p>改善光束發散、減少遠場暗區、提升傳輸穩定性。</p>
+                        </div>
+                        <div>
+                            <p class="mb-1 text-white">適用方向</p>
+                            <p>水下設備通信、水下觀測系統、AUV/ROV 資料傳輸。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-10 grid gap-4 md:grid-cols-3">
+                <div class="glass rounded-[24px] p-6">
+                    <p class="mb-2 text-[11px] uppercase tracking-[0.22em] text-[#61d3ff]">Problem</p>
+                    <h2 class="mb-3 text-xl font-bold">原本的問題</h2>
+                    <p class="text-sm leading-7 text-[color:var(--soft)]">
+                        LED 陣列的優點是亮度高，但發出的光很散。只靠一般透鏡時，遠距離光斑容易不均勻，接收端也比較難維持穩定。
+                    </p>
+                </div>
+                <div class="glass rounded-[24px] p-6">
+                    <p class="mb-2 text-[11px] uppercase tracking-[0.22em] text-[#61d3ff]">Approach</p>
+                    <h2 class="mb-3 text-xl font-bold">我的做法</h2>
+                    <p class="text-sm leading-7 text-[color:var(--soft)]">
+                        我把 CPC 放在前段先做收光，再用菲涅爾透鏡做第二次整形，目的是把原本很散的光束整理得更集中。
+                    </p>
+                </div>
+                <div class="glass rounded-[24px] p-6">
+                    <p class="mb-2 text-[11px] uppercase tracking-[0.22em] text-[#61d3ff]">Result</p>
+                    <h2 class="mb-3 text-xl font-bold">帶來的效果</h2>
+                    <p class="text-sm leading-7 text-[color:var(--soft)]">
+                        這樣做之後，輸出的光束會更集中，遠距離傳輸時也比較穩，對準上的容錯會比原本高一些。
+                    </p>
+                </div>
+            </section>
+
+            <section class="glass mb-10 rounded-[30px] p-6 md:p-8">
+                <div class="mb-5 flex items-center justify-between gap-4">
+                    <div>
+                        <p class="mb-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8fffe0]">Figures</p>
+                        <h2 class="display text-2xl font-bold md:text-3xl">專利圖與裝置示意</h2>
+                    </div>
+                    <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/65">
+                        <span id="currentSlide">1</span> / 8
                     </div>
                 </div>
 
-                <!-- 縮圖條 -->
-                <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1" id="thumbnailStrip">
-                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5 active" data-index="0">
-                        <img src="/assets/images/patent1.png" class="w-full h-full object-contain">
+                <div class="relative mb-4 overflow-hidden rounded-[24px] border border-white/10 bg-[#050d16]">
+                    <div class="aspect-[16/9] relative">
+                        <img src="/assets/images/patent-device.png" alt="專利裝置照片" class="main-image active">
+                        <img src="/assets/images/patent1.png" alt="專利結構圖 1" class="main-image">
+                        <img src="/assets/images/patent2.png" alt="專利結構圖 2" class="main-image">
+                        <img src="/assets/images/patent3.png" alt="專利結構圖 3" class="main-image">
+                        <img src="/assets/images/patent4.png" alt="專利結構圖 4" class="main-image">
+                        <img src="/assets/images/patent5.png" alt="專利結構圖 5" class="main-image">
+                        <img src="/assets/images/patent6.png" alt="專利結構圖 6" class="main-image">
+                        <img src="/assets/images/patent7.png" alt="專利結構圖 7" class="main-image">
+                    </div>
+
+                    <button id="prevBtn" class="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-xl text-white/75 transition hover:bg-black/70 hover:text-white">
+                        ‹
                     </button>
-                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="1">
-                        <img src="/assets/images/patent2.png" class="w-full h-full object-contain">
-                    </button>
-                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="2">
-                        <img src="/assets/images/patent3.png" class="w-full h-full object-contain">
-                    </button>
-                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="3">
-                        <img src="/assets/images/patent4.png" class="w-full h-full object-contain">
-                    </button>
-                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="4">
-                        <img src="/assets/images/patent5.png" class="w-full h-full object-contain">
-                    </button>
-                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="5">
-                        <img src="/assets/images/patent6.png" class="w-full h-full object-contain">
-                    </button>
-                    <button class="thumbnail flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-white/5" data-index="6">
-                        <img src="/assets/images/patent7.png" class="w-full h-full object-contain">
+                    <button id="nextBtn" class="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 text-xl text-white/75 transition hover:bg-black/70 hover:text-white">
+                        ›
                     </button>
                 </div>
-            </div>
 
-            <div class="space-y-12">
-                <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專利概述</h2>
-                    <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        本發明針對水下無線光通信（UWOC）中，LED 陣列作為大光學扩展量面光源所固有的大發散角問題，以及傳統成像光學準直方案（如平凸透鏡、非球面透鏡）因受幾何共軛成像原理限制，導致遠場光斑呈現多個分離亮點、光能耦合效率低的技術缺陷，提出了一種基於複合光學系統的水下無線光通信發射裝置及光束整形方法。
-                    </p>
-                    <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        本發明創新性地採用「複合拋物面聚光器（CPC）」與「菲涅爾透鏡（Fresnel Lens）」的二級級聯架構：CPC 依據邊緣光線原理反向作為準直元件，利用全反射機制對 LED 陣列光束進行全角度收集與初次發散角壓縮，並將朗伯型強度分佈整形為蝙蝠翼型分佈；菲涅爾透鏡在此基礎上進行二次折射準直，形成適配水下信道的準平行光束。
-                    </p>
-                    <p class="text-white/70 leading-relaxed serif-text">
-                        該裝置有效解決了 LED 陣列遠場光斑離散（柵格效應）問題，顯著提升遠距離光功率密度、通信鏈路穩定性與有效傳輸距離，為水下無線光通信系統提供了一種輕量化、高效能的發射端解決方案。
-                    </p>
-                </section>
+                <div class="no-scrollbar flex gap-3 overflow-x-auto pb-2" id="thumbnailStrip">
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5 active" data-index="0">
+                        <img src="/assets/images/patent-device.png" alt="縮圖 1" class="h-full w-full object-cover">
+                    </button>
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5" data-index="1">
+                        <img src="/assets/images/patent1.png" alt="縮圖 2" class="h-full w-full object-contain">
+                    </button>
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5" data-index="2">
+                        <img src="/assets/images/patent2.png" alt="縮圖 3" class="h-full w-full object-contain">
+                    </button>
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5" data-index="3">
+                        <img src="/assets/images/patent3.png" alt="縮圖 4" class="h-full w-full object-contain">
+                    </button>
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5" data-index="4">
+                        <img src="/assets/images/patent4.png" alt="縮圖 5" class="h-full w-full object-contain">
+                    </button>
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5" data-index="5">
+                        <img src="/assets/images/patent5.png" alt="縮圖 6" class="h-full w-full object-contain">
+                    </button>
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5" data-index="6">
+                        <img src="/assets/images/patent6.png" alt="縮圖 7" class="h-full w-full object-contain">
+                    </button>
+                    <button class="thumbnail h-20 w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-white/5" data-index="7">
+                        <img src="/assets/images/patent7.png" alt="縮圖 8" class="h-full w-full object-contain">
+                    </button>
+                </div>
+            </section>
 
-                <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">核心創新點</h2>
-                    <div class="space-y-4">
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">二級光束整形架構</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                提出 CPC + 菲涅爾透鏡的二級級聯結構。CPC 作為一級整形，利用全反射特性將 LED 陣列朗伯型發散角（全視場角約 120°）壓縮至中間收斂角（半角約 27.8°），輸出蝙蝠翼型強度分佈；菲涅爾透鏡作為二級整形，進一步將光束準直至 FWHM 小於 7°，解決了單一光學元件無法兼顧準直度與均勻性的矛盾。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">全角度光能高效收集</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                基於孔徑匹配原理（π/4 × L² ≤ π × a²），精確設計 CPC 入射孔徑（直徑 7mm，a = 3.5mm）與 LED 陣列（3×3 排列，對角線長度 L ≤ 7mm）的幾何匹配關係，強制收集包括大角度邊緣光在內的全角度輻射能量，最大化軸向光功率密度。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">非成像勻光消除柵格效應</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                CPC 採用非成像光學原理，通過多次全反射將各 LED 芯片發出的光線深度混合，打破成像光學共軛成像限制，將朗伯型光強分佈轉換為蝙蝠翼型分佈，使芯片發光均勻交疊，從根本上消除因芯片間隙成像所造成的遠場離散暗區（柵格效應）。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-blue-400 mb-2">輕量化與緊湊設計</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                採用光學級 PMMA 材質平板型菲涅爾透鏡（直徑 90mm、焦距 120mm、厚度僅約 2mm）替代傳統多片實體透鏡堆疊；精密鋁合金數控加工的空心反射式 CPC（高度 20.847mm）體積緊湊，二者組合大幅降低了發射光學模組的整體重量與軸向尺寸，適合微型水下載具集成。
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術指標與特點</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
-                                <span class="text-blue-500">●</span>
-                                極致的光束壓縮比
-                            </h3>
-                            <p class="text-white/50 text-xs leading-relaxed">
-                                LED 原始朗伯型光束全視場角約 120°，經 CPC 一次壓縮後 FWHM 降至約 54.44°（蝙蝠翼型），再由菲涅爾透鏡二次準直後 FWHM 降至約 6.47°（半角約 3.37°），整體壓縮比超過 18:1。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
-                                <span class="text-blue-500">●</span>
-                                優異的遠場光斑質量
-                            </h3>
-                            <p class="text-white/50 text-xs leading-relaxed">
-                                於 8 米遠場處形成直徑約 80mm 的均勻近圓形光斑，能量分佈高度集中，無離散柵格暗區，顯著提升動態對準環境下的通信穩定性。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
-                                <span class="text-blue-500">●</span>
-                                高能量利用率
-                            </h3>
-                            <p class="text-white/50 text-xs leading-relaxed">
-                                鋁合金 CPC 內壁經真空電鍍形成鏡面反射層，通過全反射機制收集全角度輻射能量，最大化發射端能效比，有效降低水下設備功耗。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2 flex items-center gap-2">
-                                <span class="text-blue-500">●</span>
-                                高對準容忍度
-                            </h3>
-                            <p class="text-white/50 text-xs leading-relaxed">
-                                均勻的遠場光斑分佈降低了對光軸對準精度的苛刻要求，有利於適應水下動態環境中設備移動與姿態擾動，提升系統魯棒性。
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">應用場景</h2>
-                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
-                        <div class="flex items-start gap-3">
-                            <span class="text-blue-500 mt-1 flex-shrink-0">→</span>
-                            <div>
-                                <strong class="text-white">水下觀測網絡大容量回傳：</strong>
-                                為海底傳感器節點提供高速、長距離的數據上傳鏈路。
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-blue-500 mt-1 flex-shrink-0">→</span>
-                            <div>
-                                <strong class="text-white">水下機器人 (AUV/ROV) 通信：</strong>
-                                支援近距離實時視頻傳輸，解決水聲通信帶寬不足的問題。
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-blue-500 mt-1 flex-shrink-0">→</span>
-                            <div>
-                                <strong class="text-white">艦潛保密通信：</strong>
-                                利用光波在水下的方向性與高衰減特性，實現高安全性的點對點通信。
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">現有技術對比</h2>
-                    <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h3 class="text-sm font-medium text-blue-400 mb-3 uppercase tracking-wider">傳統方案
-                                    (單透鏡/同軸組)</h3>
-                                <ul class="space-y-3 text-xs text-white/50">
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-red-400 text-lg leading-none">×</span>
-                                        <span><strong>柵格效應：</strong>透鏡將 LED 芯片陣列直接共軛成像於遠場，光斑呈現多個分離亮點，接收端對準時信號劇烈波動。</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-red-400 text-lg leading-none">×</span>
-                                        <span><strong>光能利用率低：</strong>受孔徑光闌限制，無法高效收集 LED 邊緣大角度光線，能量耦合效率受限。</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-red-400 text-lg leading-none">×</span>
-                                        <span><strong>體積笨重：</strong>多鏡片堆疊導致軸向尺寸大、重量重，不適合微型潛水器集成。</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-medium text-blue-400 mb-3 uppercase tracking-wider">本發明 (CPC +
-                                    Fresnel)</h3>
-                                <ul class="space-y-3 text-xs text-white/70">
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-green-400 text-lg leading-none">✓</span>
-                                        <span><strong>光斑質量：</strong>非成像光學消除芯片間隙成像暗區，8m 處形成直徑約 80mm 的均勻連續圓形光斑。</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-green-400 text-lg leading-none">✓</span>
-                                        <span><strong>能量效率：</strong>鏡面反射 CPC 強制收集全角度輻射，軸向光功率密度顯著提升，最大化鏈路信噪比。</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-green-400 text-lg leading-none">✓</span>
-                                        <span><strong>結構緊湊：</strong>PMMA 平板菲涅爾透鏡（厚 2mm）+ 精密 CPC（高 20.847mm），輕量化易封裝。</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">具體實施方式</h2>
-                    <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        本發明裝置各光學組件沿光軸（Z 軸）方向依次同軸封裝於圓筒狀 PVC 支撐壳體內：
+            <section class="mb-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+                <div class="glass rounded-[30px] p-8">
+                    <p class="mb-2 text-[11px] uppercase tracking-[0.24em] text-[#8fffe0]">Simple Explanation</p>
+                    <h2 class="display mb-4 text-3xl font-bold">它是怎麼工作的？</h2>
+                    <p class="mb-5 text-sm leading-7 text-[color:var(--muted)]">
+                        整個結構可以直接理解成兩段。第一段先收光，第二段再把光束整理得更集中。
                     </p>
                     <div class="space-y-4">
-                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">1. LED 芯片陣列（光源模組）</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                選用 Lumileds LUXEON Z Color 系列藍綠光 LED（型號 LXZ1-PB01），封裝尺寸 1.7mm × 1.7mm，以 3×3 矩陣方式緊密貼裝於 PCB 基板，構成矩形發光區域。矩形發光區域對角線長度 L 滿足幾何約束條件 π/4 × L² ≤ π × a²，確保全部發射光能被 CPC 完整接收，避免能量溢出。
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                            <p class="mb-1 text-sm font-semibold text-white">第一段：CPC 收光</p>
+                            <p class="text-sm leading-7 text-[color:var(--soft)]">
+                                LED 發出的光角度很多，CPC 會先把這些光盡量收進來，尤其是原本比較容易散掉的邊緣光。
                             </p>
                         </div>
-                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">2. 複合拋物面聚光器（CPC）</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                採用精密數控加工的鋁合金空心反射式結構，入射孔徑直徑 7mm（a = 3.5mm），出射孔徑直徑 15mm（b = 7.5mm），軸向高度 20.847mm，理論設計半接收角 θ_max = 27.818°。內壁經真空電鍍工藝形成鏡面反射層，將 LED 大角度朗伯型光束通過多次全反射壓縮至中間收斂角，輸出 FWHM 約 54.44° 的蝙蝠翼型強度分佈。
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                            <p class="mb-1 text-sm font-semibold text-white">第二段：菲涅爾透鏡整形</p>
+                            <p class="text-sm leading-7 text-[color:var(--soft)]">
+                                經過第一段之後，光束已經收了一次，再由菲涅爾透鏡做第二次準直，讓輸出方向更一致。
                             </p>
                         </div>
-                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">3. 菲涅爾透鏡（二級準直）</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                採用光學級 PMMA 材質平板型菲涅爾透鏡，直徑 90mm，焦距 120mm，厚度約 2mm，設置於距 LED 發光面 135mm 處。其同心環帶結構對 CPC 輸出的中間態光束進行二次折射準直，最終出射光束 FWHM 降至約 6.47°（半角約 3.37°），於 8m 遠場處形成直徑約 80mm 的均勻圓形光斑。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border-l-4 border-blue-500 p-5 rounded">
-                            <h3 class="text-base font-medium text-white mb-2">4. 防水壳體與定位結構</h3>
-                            <p class="text-white/60 text-sm leading-relaxed">
-                                各光學組件沿光軸同軸封裝於圓筒狀 PVC 支撐壳體內。菲涅爾透鏡固定於壳體前端，接縫通過環氧樹脂防水粘接工藝密封固化，前端設置高透光率觀察窗並配合密封圈進行水密性處理，確保系統在水下高壓環境中穩定工作。
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                            <p class="mb-1 text-sm font-semibold text-white">最後效果</p>
+                            <p class="text-sm leading-7 text-[color:var(--soft)]">
+                                光束變得比較集中之後，水下傳輸時的能量分布會更好，接收端也比較容易收到穩定訊號。
                             </p>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
 
-            <div class="mt-16 text-center">
-                <a href="/"
-                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                <div class="glass rounded-[30px] p-8">
+                    <p class="mb-2 text-[11px] uppercase tracking-[0.24em] text-[#8fffe0]">Why It Matters</p>
+                    <h2 class="display mb-4 text-3xl font-bold">這個設計解決了什麼？</h2>
+                    <div class="space-y-4 text-sm leading-7 text-[color:var(--muted)]">
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                            <h3 class="mb-2 text-base font-semibold text-white">1. 光斑比較完整</h3>
+                            <p>傳統做法在遠場可能會看到分散亮點。這個設計的方向，是讓光斑更連續一些，不要那麼碎。</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                            <h3 class="mb-2 text-base font-semibold text-white">2. 提高光能利用率</h3>
+                            <p>不只是用正前方的光，原本比較容易浪費掉的邊緣光也會盡量收進系統。</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                            <h3 class="mb-2 text-base font-semibold text-white">3. 結構比較適合做成模組</h3>
+                            <p>和多鏡片堆疊相比，這個方案更容易做成體積較小、重量較低的發射端。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-10 grid gap-6 md:grid-cols-2">
+                <div class="glass rounded-[30px] p-8">
+                    <p class="mb-2 text-[11px] uppercase tracking-[0.24em] text-[#61d3ff]">Applications</p>
+                    <h2 class="display mb-4 text-3xl font-bold">可以用在哪裡？</h2>
+                    <div class="space-y-4 text-sm leading-7 text-[color:var(--muted)]">
+                        <div>
+                            <p class="font-semibold text-white">水下機器人通信</p>
+                            <p>AUV、ROV 在執行任務時，可以用這類發射端做短中距離資料傳輸。</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">水下感測網路</p>
+                            <p>海底感測設備把資料回傳時，較集中的光束有助於提升鏈路品質。</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">研究與實驗平台</p>
+                            <p>也適合拿來做水下光通信驗證、模組測試和原型設計。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-[30px] p-8">
+                    <p class="mb-2 text-[11px] uppercase tracking-[0.24em] text-[#61d3ff]">Takeaway</p>
+                    <h2 class="display mb-4 text-3xl font-bold">項目總結</h2>
+                    <p class="mb-4 text-sm leading-8 text-[color:var(--muted)]">
+                        這個專利的重點，是用比較簡潔的光學結構去改善 LED 發射端在水下通信裡常見的發散和光斑不均問題。
+                    </p>
+                    <p class="text-sm leading-8 text-[color:var(--muted)]">
+                        目前這頁先把項目的核心想法整理出來。之後如果要再補，我會把每張圖對應的結構和實驗結果一起放進來。
+                    </p>
+                </div>
+            </section>
+
+            <div class="text-center">
+                <a href="/" class="inline-flex items-center rounded-full border border-white/15 px-8 py-3 text-sm font-medium tracking-[0.18em] text-white/75 transition hover:border-white/35 hover:text-white">
                     返回作品集
                 </a>
             </div>
@@ -317,8 +319,8 @@
     </main>
 
     <footer class="border-t border-white/5 py-8">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        <div class="mx-auto max-w-6xl px-6 text-center">
+            <p class="text-xs tracking-[0.18em] text-white/30">© 2024 HONG WAI KAI. All rights reserved.</p>
         </div>
     </footer>
 
@@ -327,26 +329,65 @@
         const mainImages = document.querySelectorAll('.main-image');
         const thumbnails = document.querySelectorAll('.thumbnail');
         const currentSlideText = document.getElementById('currentSlide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
         const totalSlides = mainImages.length;
 
         function showSlide(index) {
-            mainImages.forEach(img => img.classList.remove('active'));
-            thumbnails.forEach(t => t.classList.remove('active'));
+            mainImages.forEach((img) => img.classList.remove('active'));
+            thumbnails.forEach((thumb) => thumb.classList.remove('active'));
 
             mainImages[index].classList.add('active');
             thumbnails[index].classList.add('active');
             currentSlideText.textContent = index + 1;
             currentIndex = index;
 
-            thumbnails[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            thumbnails[index].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
         }
 
-        thumbnails.forEach((t, i) => t.addEventListener('click', () => showSlide(i)));
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') showSlide((currentIndex - 1 + totalSlides) % totalSlides);
-            if (e.key === 'ArrowRight') showSlide((currentIndex + 1) % totalSlides);
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => showSlide(index));
         });
+
+        prevBtn.addEventListener('click', () => {
+            showSlide((currentIndex - 1 + totalSlides) % totalSlides);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showSlide((currentIndex + 1) % totalSlides);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                showSlide((currentIndex - 1 + totalSlides) % totalSlides);
+            }
+            if (event.key === 'ArrowRight') {
+                showSlide((currentIndex + 1) % totalSlides);
+            }
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const mainImageContainer = document.querySelector('.aspect-\\[16\\/9\\]');
+
+        mainImageContainer.addEventListener('touchstart', (event) => {
+            touchStartX = event.changedTouches[0].screenX;
+        }, { passive: true });
+
+        mainImageContainer.addEventListener('touchend', (event) => {
+            touchEndX = event.changedTouches[0].screenX;
+            const swipeThreshold = 50;
+
+            if (touchStartX - touchEndX > swipeThreshold) {
+                showSlide((currentIndex + 1) % totalSlides);
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                showSlide((currentIndex - 1 + totalSlides) % totalSlides);
+            }
+        }, { passive: true });
     </script>
 </body>
 

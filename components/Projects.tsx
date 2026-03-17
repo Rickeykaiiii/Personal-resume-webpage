@@ -15,10 +15,10 @@ const Projects: React.FC = () => {
   return (
     <div className="px-4 md:px-6 py-8 md:py-12">
       <div className="mb-10 md:mb-12">
-        <h2 className="text-3xl md:text-4xl font-light text-white mb-2 md:mb-3 serif-text tracking-tight">Selected Projects</h2>
+        <h2 className="text-3xl md:text-4xl font-light text-white mb-2 md:mb-3 serif-text tracking-tight">Projects / 項目</h2>
         <div className="h-[1px] w-10 md:w-12 bg-blue-600 mb-3 md:mb-4" />
         <p className="text-xs md:text-sm text-white/40 serif-text max-w-md">
-          A curated collection of research initiatives and digital solutions.
+          項目合集
         </p>
       </div>
 

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWOC 組網技術研究</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-sm tracking-widest text-white/60 hover:text-white transition-colors">
+                ← BACK TO PORTFOLIO
+            </a>
+            <span class="text-[10px] tracking-[0.3em] text-white/30 uppercase">Research</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Hero Section -->
+            <div class="mb-16 text-center">
+                <span class="text-cyan-500 text-xs tracking-[0.3em] font-bold uppercase mb-4 block">Underwater Wireless Optical Communication</span>
+                <h1 class="text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">UWOC 組網技術研究</h1>
+                <p class="text-lg text-white/60 font-light max-w-2xl mx-auto serif-text">
+                    水下無線光通信多跳中繼網路系統
+                </p>
+                <p class="text-sm text-white/30 mt-3 font-light serif-text">
+                    Multi-hop Relay Network for Underwater Wireless Optical Communication
+                </p>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-12">
+
+                <!-- Project Overview -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">研究背景</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-4">
+                        水下環境中，傳統的無線電波和聲波通信都存在明顯的局限性。無線電波在水中衰減極快，而聲波雖然傳播距離較遠，但頻寬極低，無法滿足高速數據傳輸的需求。水下無線光通信（UWOC）技術利用可見光或近紅外光在水中傳播，能夠實現高速率、低延遲的數據傳輸。
+                    </p>
+                    <p class="text-white/70 leading-relaxed serif-text">
+                        本研究針對長距離水下通信場景，設計了一套基於多跳中繼的 UWOC 組網系統，通過多個水下自主航行器（AUV）作為中繼節點，實現從水下攝像設備到數據中心的端到端光信號傳輸。
+                    </p>
+                </section>
+
+                <!-- Video Demo -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">系統演示</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+                        <video controls class="w-full" preload="metadata" poster="/assets/images/UWOC-Networking.png">
+                            <source src="/assets/Video/UWOC-Networking.mp4" type="video/mp4">
+                            您的瀏覽器不支持視頻播放
+                        </video>
+                        <div class="p-4">
+                            <p class="text-white/60 text-sm text-center">UWOC 多跳中繼組網系統實驗演示</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- System Architecture -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">系統架構</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        整個通信鏈路由五個主要部分組成，形成一條完整的數據傳輸路徑：
+                    </p>
+
+                    <div class="space-y-4">
+                        <!-- Node 1 -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-cyan-400 text-2xl font-bold">①</span>
+                                <h3 class="text-lg font-medium text-white">源端 AUV（攝像節點）</h3>
+                            </div>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                搭載水下攝像頭，負責採集水下影像數據。影像信號經過調制處理後，加載到 LED 光源上，以可見光的形式向外發射。
+                            </p>
+                        </div>
+
+                        <!-- Node 2 -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-cyan-400 text-2xl font-bold">②</span>
+                                <h3 class="text-lg font-medium text-white">第一中繼節點 AUV</h3>
+                            </div>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                配備光電探測器（PD），接收來自源端的光信號並轉換為電信號。經過信號放大和再調制後，重新加載到該節點的 LED 上，繼續以光信號形式向下一跳傳輸。
+                            </p>
+                        </div>
+
+                        <!-- Node 3 -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-cyan-400 text-2xl font-bold">③</span>
+                                <h3 class="text-lg font-medium text-white">第二中繼節點 AUV</h3>
+                            </div>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                同樣接收上一跳的 LED 光信號，經過光電轉換和信號處理後，將數據加載到激光二極管（LD）上。相比 LED，LD 具有更高的功率密度和更窄的光束發散角，適合長距離傳輸。
+                            </p>
+                        </div>
+
+                        <!-- Node 4 -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-cyan-400 text-2xl font-bold">④</span>
+                                <h3 class="text-lg font-medium text-white">水下信道傳輸</h3>
+                            </div>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                激光信號穿過水下信道（實驗中使用水箱模擬真實海洋環境），經歷吸收、散射等衰減效應後，到達接收端。
+                            </p>
+                        </div>
+
+                        <!-- Node 5 -->
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="text-cyan-400 text-2xl font-bold">⑤</span>
+                                <h3 class="text-lg font-medium text-white">接收端與數據中心</h3>
+                            </div>
+                            <p class="text-white/60 text-sm leading-relaxed">
+                                接收端的光電探測器將激光信號轉換為電信號，隨後通過光纖鏈路傳輸至數據中心，完成整個通信過程。光纖傳輸段保證了信號的穩定性和低損耗。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Technologies -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">關鍵技術</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">多跳中繼機制</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                通過多個 AUV 節點接力傳輸，突破單跳通信距離限制，實現遠距離覆蓋。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">光電轉換與放大</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                每個中繼節點對接收到的微弱光信號進行光電轉換、放大和再調制，保證信號質量。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">LED 與 LD 混合傳輸</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                前段使用 LED 實現廣角覆蓋，後段使用 LD 提升傳輸距離和速率。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">光纖融合傳輸</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                最後一段採用光纖傳輸，確保數據穩定、高速地送達數據中心。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Challenges -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術挑戰</h2>
+                    <div class="space-y-3 text-white/70 leading-relaxed serif-text">
+                        <div class="flex items-start gap-3">
+                            <span class="text-cyan-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">信號衰減與噪聲：</strong>
+                                水下環境中的吸收、散射效應會導致光信號快速衰減，同時背景光噪聲會影響接收端的信噪比。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-cyan-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">對準與追蹤：</strong>
+                                AUV 在水下會受到洋流影響而產生位置偏移，需要精確的光束對準和追蹤機制。
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-cyan-500 mt-1 flex-shrink-0">→</span>
+                            <div>
+                                <strong class="text-white">中繼節點同步：</strong>
+                                多跳傳輸中，各節點之間需要保持時間同步和數據完整性，避免丟包和延遲累積。
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Applications -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">應用場景</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">水下探測與監測</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                海洋科考、水下考古、海底管線巡檢等場景，需要實時傳輸高清影像數據。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">水下機器人協同</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                多台 AUV 協同作業時，需要高速、低延遲的通信鏈路進行數據交換和任務協調。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">海底數據中心連接</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                未來海底數據中心與水面設施之間的高速數據傳輸需求。
+                            </p>
+                        </div>
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
+                            <h3 class="text-base font-medium text-white mb-2">軍事與安全</h3>
+                            <p class="text-white/50 text-xs leading-relaxed">
+                                水下偵察、潛艇通信等對保密性和傳輸速率有較高要求的場景。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Research Significance -->
+                <section>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">研究意義</h2>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
+                        <p>→ 突破了單跳 UWOC 系統的距離限制，為遠距離水下通信提供了可行方案</p>
+                        <p>→ 驗證了 LED 與 LD 混合傳輸的可行性，為不同場景選擇合適的光源提供了參考</p>
+                        <p>→ 為水下物聯網（Underwater IoT）和海洋觀測網絡的構建奠定了技術基礎</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back Button -->
+            <div class="mt-16 text-center">
+                <a href="/"
+                    class="inline-block px-8 py-3 border border-white/20 rounded-full text-sm tracking-wider text-white/70 hover:text-white hover:border-white/40 transition-all duration-300">
+                    返回作品集
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-xs text-white/30 tracking-wider">© 2024 HONG WAI KAI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

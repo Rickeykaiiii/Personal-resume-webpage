@@ -115,7 +115,7 @@ const App: React.FC = () => {
       case 'about':
         return (
           <div className="max-w-2xl mx-auto pt-32 md:pt-48 pb-24 md:pb-32 px-6 text-white text-center">
-            <h1 className="text-3xl md:text-4xl font-light tracking-tighter mb-6 md:mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">About Me</h1>
+            <h1 className="text-3xl md:text-4xl font-light tracking-tighter mb-6 md:mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">About Me / 個人簡介</h1>
             <p className="text-white/60 leading-relaxed text-base md:text-lg font-light serif-text animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
               我是一名專注於通信工程與 IT 教育領域的研究生，研究方向聚焦 6G 通信技術下的水下可見光通信，熱衷於 LLM、YOLO 等技術工具的實踐與探索，並熟練掌握 Python 語言。
             </p>

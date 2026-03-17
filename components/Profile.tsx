@@ -85,7 +85,7 @@ const Profile: React.FC = () => {
 
       <div className="grid grid-cols-1 gap-12 md:gap-16">
         <section>
-          <h2 className="text-[10px] tracking-[0.4em] text-white/30 uppercase mb-6 md:mb-8 border-b border-white/5 pb-3 md:pb-4">Education</h2>
+          <h2 className="text-[10px] tracking-[0.4em] text-white/30 uppercase mb-6 md:mb-8 border-b border-white/5 pb-3 md:pb-4">教育背景</h2>
           <div className="space-y-4">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-8 hover:bg-white/[0.07] transition-colors duration-500">
               <div className="flex gap-4 md:gap-6 items-start">
@@ -93,9 +93,9 @@ const Profile: React.FC = () => {
                   <img src="/assets/images/bupt-logo.png" alt="BUPT" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-medium text-white mb-1">Beijing University of Posts and Telecommunications</h3>
-                  <p className="text-blue-400 text-xs md:text-sm mb-1 font-medium tracking-wide">Graduate Research / Communication Engineering</p>
-                  <p className="text-white/30 text-[10px] tracking-wider">2023 – Present</p>
+                  <h3 className="text-lg md:text-xl font-medium text-white mb-1">北京郵電大學</h3>
+                  <p className="text-blue-400 text-xs md:text-sm mb-1 font-medium tracking-wide">研究生 / 通信工程</p>
+                  <p className="text-white/30 text-[10px] tracking-wider">2023 – 至今</p>
                 </div>
               </div>
             </div>
@@ -106,8 +106,8 @@ const Profile: React.FC = () => {
                   <img src="/assets/images/bupt-logo.png" alt="BUPT" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-medium text-white mb-1">Beijing University of Posts and Telecommunications</h3>
-                  <p className="text-blue-400 text-xs md:text-sm mb-1 font-medium tracking-wide">Bachelor's Degree / Communication Engineering</p>
+                  <h3 className="text-lg md:text-xl font-medium text-white mb-1">北京郵電大學</h3>
+                  <p className="text-blue-400 text-xs md:text-sm mb-1 font-medium tracking-wide">學士學位 / 通信工程</p>
                   <p className="text-white/30 text-[10px] tracking-wider mb-3 md:mb-4">2019 – 2023</p>
                 </div>
               </div>
@@ -129,10 +129,10 @@ const Profile: React.FC = () => {
         </section>
 
         <section>
-          <h2 className="text-[10px] tracking-[0.4em] text-white/30 uppercase mb-6 md:mb-8 border-b border-white/5 pb-3 md:pb-4">Skills & Languages</h2>
+          <h2 className="text-[10px] tracking-[0.4em] text-white/30 uppercase mb-6 md:mb-8 border-b border-white/5 pb-3 md:pb-4">技能與語言</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             <div className="space-y-5 md:space-y-6">
-              <h3 className="text-xs tracking-[0.2em] text-white/60 uppercase font-semibold">Technical Proficiency</h3>
+              <h3 className="text-xs tracking-[0.2em] text-white/60 uppercase font-semibold">技能</h3>
               <div className="flex flex-wrap gap-2">
                 {SKILLS.map((skill) => (
                   <span key={skill.name} className="px-3 md:px-4 py-1.5 md:py-2 rounded-xl bg-white/5 border border-white/10 text-[10px] tracking-wider text-white/70 hover:text-white hover:border-white/30 transition-all cursor-default">
@@ -142,7 +142,7 @@ const Profile: React.FC = () => {
               </div>
             </div>
             <div className="space-y-6 md:space-y-8">
-              <h3 className="text-xs tracking-[0.2em] text-white/60 uppercase font-semibold">Languages</h3>
+              <h3 className="text-xs tracking-[0.2em] text-white/60 uppercase font-semibold">語言能力</h3>
               <div className="space-y-5 md:space-y-6">
                 {LANGUAGES.map((lang) => (
                   <div key={lang.name} className="space-y-3">
