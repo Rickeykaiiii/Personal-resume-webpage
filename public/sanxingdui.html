@@ -56,41 +56,41 @@
 
                 <!-- Project Overview -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專案簡介</h2>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目簡介</h2>
                     <p class="text-white/70 leading-relaxed serif-text mb-4">
-                        「蜀夢千載」是一個融合<strong class="text-white">文化遺產</strong>與<strong class="text-white">前沿人機互動技術</strong>的 Web3D 展覽專案。本專案透過高精度的 3D 建模技術還原神秘的古蜀三星堆文物（如青銅大立人、青銅神樹、黃金面具等），並結合先進的電腦視覺技術，讓使用者<strong class="text-white">只需透過手機或電腦的鏡頭揮動雙手</strong>，即可在瀏覽器內零距離、全方位地賞析千年國寶。
+                        這個項目想做的是把三星堆文物搬到瀏覽器裡，用手勢就能控制。文物由 <strong class="text-white">15 萬個粒子</strong>組成，可以在混沌和完整形態之間變形，配上 Bloom 發光效果做出賽博朋克的視覺風格。
                     </p>
                     <p class="text-white/70 leading-relaxed serif-text">
-                        本專案旨在打破實體博物館的地理限制，以最自然、直覺的手勢動作互動，為使用者帶來沉浸式的數位考古體驗。
+                        交互方式是用攝像頭識別手勢——握拳縮小、張開放大、豎大拇指換模型。整個項目就一個 HTML 文件，所有計算都在瀏覽器裡完成。
                     </p>
                 </section>
 
                 <!-- Core Features -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">核心功能</h2>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">主要功能</h2>
                     <div class="space-y-4">
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-amber-400 mb-2">無接觸手勢操控</h3>
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">粒子系統動畫</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                透過 AI 視覺演算法捕捉手部骨架節點，實現無延遲的凌空互動。無需穿戴任何設備，揮手即可與文物對話。
+                                15 萬個粒子用 GLSL Shader 控制，可以從混沌形態平滑變形為文物模型。配合 Bloom 後處理效果呈現科幻視覺風格。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-amber-400 mb-2">高精度 3D 文物還原</h3>
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">手勢識別交互</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                採用 PBR（Physically Based Rendering）材質技術，完美重現青銅器的鏽跡、黃金的光澤與玉石的溫潤，呈現文物的真實質感。
+                                MediaPipe 追踪 21 個手部關鍵點，支持握拳縮放、豎拇指切換模型（1.5 秒）、OK 手勢切換渲染模式（2 秒）。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-amber-400 mb-2">零安裝網頁體驗</h3>
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">雙渲染模式</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                基於 WebGL 構建，支援手機、平板、PC 等多平台，隨點即看，無需下載任何應用程式或外掛程式。
+                                粒子模式展現動態視覺效果，實體模式還原青銅器材質細節，可隨時切換。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-6">
-                            <h3 class="text-lg font-medium text-amber-400 mb-2">沉浸式文化解說</h3>
+                            <h3 class="text-lg font-medium text-amber-400 mb-2">移動端適配</h3>
                             <p class="text-white/60 text-sm leading-relaxed">
-                                隨著使用者旋轉文物到特定角度，系統會自動觸發該部位的圖文與語音解說，揭開古蜀文明的神秘面紗。
+                                攝像頭分辨率降至 240x180，使用輕量級手勢識別模型，確保移動設備流暢運行。
                             </p>
                         </div>
                     </div>
@@ -98,107 +98,93 @@
 
                 <!-- Technology Stack -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術架構</h2>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術實現</h2>
                     <p class="text-white/70 leading-relaxed serif-text mb-6">
-                        本專案採用純前端架構與端側 AI 推理，確保使用者的互動隱私與極致流暢度：
+                        項目採用單文件架構（index.html）配合 ES6 模塊化，所有計算在瀏覽器端完成：
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">前端框架</h3>
-                            <p class="text-amber-400 text-xs font-medium mb-1">React / Vue.js</p>
-                            <p class="text-white/50 text-xs leading-relaxed">處理 UI 介面、展廳導航與狀態管理。</p>
+                            <h3 class="text-base font-medium text-white mb-2">3D 渲染</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">Three.js v0.160.0</p>
+                            <p class="text-white/50 text-xs leading-relaxed">粒子系統、OBJ/MTL 模型加載、UnrealBloomPass 後處理、OrbitControls 相機。</p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">3D 引擎</h3>
-                            <p class="text-amber-400 text-xs font-medium mb-1">Three.js (WebGL)</p>
-                            <p class="text-white/50 text-xs leading-relaxed">負責 3D 模型的加載（GLTF/GLB）、光影渲染與場景構建。</p>
+                            <h3 class="text-base font-medium text-white mb-2">手勢識別</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">MediaPipe Hands</p>
+                            <p class="text-white/50 text-xs leading-relaxed">追踪 21 個手部關鍵點，雙手檢測，自己寫的手勢識別算法。</p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">手勢辨識</h3>
-                            <p class="text-amber-400 text-xs font-medium mb-1">MediaPipe (TensorFlow.js)</p>
-                            <p class="text-white/50 text-xs leading-relaxed">在瀏覽器端即時進行 21 個手部關鍵點（Hand Landmarks）的追蹤與姿態預測。</p>
+                            <h3 class="text-base font-medium text-white mb-2">樣式</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">Tailwind CSS</p>
+                            <p class="text-white/50 text-xs leading-relaxed">響應式布局，毛玻璃效果的 UI。</p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">模型處理</h3>
-                            <p class="text-amber-400 text-xs font-medium mb-1">Blender</p>
-                            <p class="text-white/50 text-xs leading-relaxed">3D 模型的前期拓撲最佳化、烘焙與材質貼圖處理。</p>
+                            <h3 class="text-base font-medium text-white mb-2">著色器</h3>
+                            <p class="text-amber-400 text-xs font-medium mb-1">GLSL</p>
+                            <p class="text-white/50 text-xs leading-relaxed">自己寫的頂點和片段著色器，控制粒子變形。</p>
                         </div>
                     </div>
                 </section>
 
                 <!-- Interaction Guide -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">互動指南</h2>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">交互方式</h2>
                     <p class="text-white/70 leading-relaxed serif-text mb-6">
-                        畫面分為四個手勢感應區，不同位置對應不同手勢動作：
+                        用戶通過攝像頭做出手勢即可控制文物模型：
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-[10px] tracking-widest text-white/30 uppercase">左上</span>
-                                <span class="text-xs font-medium text-amber-400 tracking-wider">PALM ROTATE</span>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xs font-medium text-amber-400 tracking-wider">縮放</span>
                             </div>
-                            <p class="text-white text-sm font-medium mb-1">✋ 單手入鏡，轉動手掌角度</p>
-                            <p class="text-white/50 text-xs leading-relaxed">旋轉文物 Y 軸，全方位觀賞。</p>
+                            <p class="text-white text-sm font-medium mb-2">✊ ↔ ✋ 握拳 / 張開</p>
+                            <p class="text-white/50 text-xs leading-relaxed">握緊拳頭縮到最小，完全張開放到最大。</p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-[10px] tracking-widest text-white/30 uppercase">右上</span>
-                                <span class="text-xs font-medium text-amber-400 tracking-wider">TWO HANDS SCALE</span>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xs font-medium text-amber-400 tracking-wider">換文物</span>
                             </div>
-                            <p class="text-white text-sm font-medium mb-1">🤚↔🤚 雙手拉開 / 靠近</p>
-                            <p class="text-white/50 text-xs leading-relaxed">縮放文物模型，放大檢視細節紋理。</p>
+                            <p class="text-white text-sm font-medium mb-2">👍 豎拇指 1.5 秒</p>
+                            <p class="text-white/50 text-xs leading-relaxed">豎大拇指保持 1.5 秒，就會換到下一個青銅器。</p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-[10px] tracking-widest text-white/30 uppercase">左下</span>
-                                <span class="text-xs font-medium text-amber-400 tracking-wider">MODE SWITCH</span>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xs font-medium text-amber-400 tracking-wider">切換模式</span>
                             </div>
-                            <p class="text-white text-sm font-medium mb-1">👌 OK 手勢持續 2 秒</p>
-                            <p class="text-white/50 text-xs leading-relaxed">切換粒子模式與實體材質模式，金色邊框標示當前模式。</p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-[10px] tracking-widest text-white/30 uppercase">右下</span>
-                                <span class="text-xs font-medium text-amber-400 tracking-wider">AI ANALYSIS</span>
-                            </div>
-                            <p class="text-white text-sm font-medium mb-1">👍 大拇指持續 1.5 秒</p>
-                            <p class="text-white/50 text-xs leading-relaxed">觸發 AI 語音解說，揭開文物背後的古蜀文明故事。</p>
+                            <p class="text-white text-sm font-medium mb-2">👌 OK 手勢 2 秒</p>
+                            <p class="text-white/50 text-xs leading-relaxed">OK 手勢保持 2 秒，在粒子和實體之間切換。</p>
                         </div>
                     </div>
                     <div class="mt-4 bg-amber-500/5 border border-amber-500/20 rounded-xl p-4">
                         <p class="text-white/50 text-xs leading-relaxed">
-                            <strong class="text-amber-400">注意：</strong>體驗本專案需要開啟瀏覽器的視訊鏡頭權限。所有手勢影像運算皆在本地端完成，不會上傳任何影像資料，請安心使用。
+                            <strong class="text-amber-400">隱私：</strong>所有計算都在你的瀏覽器裡完成，不會把影像傳到任何服務器。
                         </p>
                     </div>
                 </section>
 
                 <!-- Featured Artifacts -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">重點展品</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">展示內容</h2>
+                    <p class="text-white/70 leading-relaxed serif-text mb-6">
+                        項目收錄三件三星堆青銅器，使用 OBJ/MTL 格式加載，配合 PBR 材質紋理：
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">青銅縱目面具</h3>
+                            <h3 class="text-base font-medium text-white mb-2">青銅器 1</h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                體驗古蜀人對「千里眼」與「順風耳」的超自然崇拜。
+                                三星堆出土的青銅文物，3D 掃描建模，能看到表面的細節。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">青銅神樹</h3>
+                            <h3 class="text-base font-medium text-white mb-2">青銅器 2</h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                探索古代中國宇宙觀與太陽崇拜的具象化體現。
+                                古蜀文明的代表器物，三千年前的青銅鑄造工藝。
                             </p>
                         </div>
                         <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">金面銅人頭像</h3>
+                            <h3 class="text-base font-medium text-white mb-2">青銅器 3</h3>
                             <p class="text-white/50 text-xs leading-relaxed">
-                                感受青銅與黃金結合的威嚴與神秘。
-                            </p>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-5">
-                            <h3 class="text-base font-medium text-white mb-2">玉璋</h3>
-                            <p class="text-white/50 text-xs leading-relaxed">
-                                了解古蜀國的祭祀禮儀與玉器加工工藝。
+                                神秘的古蜀青銅器，帶著遠古文明的痕跡。
                             </p>
                         </div>
                     </div>
@@ -206,27 +192,27 @@
 
                 <!-- Impact -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">專案意義</h2>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">技術亮點</h2>
                     <div class="space-y-3 text-white/70 leading-relaxed serif-text">
                         <div class="flex items-start gap-3">
                             <span class="text-amber-500 mt-1 flex-shrink-0">→</span>
                             <div>
-                                <strong class="text-white">數位典藏活化：</strong>
-                                讓靜態的文物「活」起來，拉近大眾與歷史的距離。
+                                <strong class="text-white">粒子系統動畫：</strong>
+                                15 萬個粒子通過自定義 GLSL Shader 實現從混沌到文物的平滑變形，配合 Bloom 後處理呈現賽博朋克視覺效果。
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-amber-500 mt-1 flex-shrink-0">→</span>
                             <div>
-                                <strong class="text-white">無障礙教育：</strong>
-                                提供了有別於滑鼠和鍵盤的互動方式，為不同年齡層帶來寓教於樂的歷史學習體驗。
+                                <strong class="text-white">端側 AI 推理：</strong>
+                                MediaPipe Hands 在瀏覽器本地完成 21 個手部關鍵點追踪，無需服務器，保護用戶隱私。
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
                             <span class="text-amber-500 mt-1 flex-shrink-0">→</span>
                             <div>
-                                <strong class="text-white">技術探索：</strong>
-                                展示了 Web 端 AI 結合 3D 渲染在元宇宙與數位展陳領域的巨大潛力。
+                                <strong class="text-white">性能優化：</strong>
+                                移動端降低攝像頭分辨率至 240x180，使用輕量級模型，預加載機制確保流暢體驗。
                             </div>
                         </div>
                     </div>
@@ -234,11 +220,12 @@
 
                 <!-- Future Roadmap -->
                 <section>
-                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">未來展望</h2>
+                    <h2 class="text-2xl font-medium text-white mb-4 border-b border-white/10 pb-3">項目特點</h2>
                     <div class="bg-white/5 border border-white/10 rounded-xl p-6 space-y-3 text-sm text-white/60">
-                        <p>→ 支援 VR/AR 設備（如 Meta Quest / Apple Vision Pro）的沉浸式 WebXR 體驗</p>
-                        <p>→ 引入 AI 語音導覽助手，使用者可直接用語音對文物提出問題</p>
-                        <p>→ 增加多人連線功能，實現「虛擬展廳同遊」</p>
+                        <p>→ 單文件架構配合 ES6 模塊化，代碼結構清晰易維護</p>
+                        <p>→ 雙渲染模式無縫切換：粒子模式展現科幻美學，實體模式還原文物質感</p>
+                        <p>→ 完整的移動端適配：觸摸友好的交互體驗，響應式 UI 設計</p>
+                        <p>→ 零服務器依賴：所有計算在瀏覽器本地完成，保護用戶隱私</p>
                     </div>
                 </section>
 

@@ -50,6 +50,16 @@ export const PROJECTS: Project[] = [
     imageUrl: '/assets/images/robot.png',
     color: 'purple',
     url: '/robot.html'
+  },
+  {
+    id: '6',
+    category: 'IT Project',
+    title: 'Isaac Lab&SIM',
+    description: '基於 NVIDIA Isaac Lab 的機器人仿真與強化學習訓練平台。',
+    date: '2024',
+    imageUrl: '/assets/images/Isaac_image.png',
+    color: 'green',
+    url: '/isaac-lab.html'
   }
 ];
 
